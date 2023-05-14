@@ -1,0 +1,8 @@
+# Some rules:
+#   Each users in each line.
+#   '#' means this line this disabled, as it is the comment, no matter where the '#' in the line. E.g.
+#     #admin@local -> Disabled
+#     admin@local# -> Disabled
+#   No empty lines. It will return the very weird behaviour (thanks Python Foundation)
+#   root user is not allowed
+administrator
