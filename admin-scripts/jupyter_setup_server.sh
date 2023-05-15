@@ -28,7 +28,8 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	chmod +rwxrxrx /etc/init.d/jupyter
 	sudo add-apt-repository ppa:ppa-verse/xeus-cling
 	sudo apt update && sudo apt full-upgrade -y
-	git clone https://github.com/jupyterhub/nativeauthenticator.git /etc/jupyter/
+	mkdir /etc/jupyter/nativeauthenticator
+	git clone https://github.com/jupyterhub/nativeauthenticator.git /etc/jupyter/nativeauthenticator
 	sudo apt install -y gcc g++ gdb make cmake automake ninja-build rsync zip openssh-server openssh-client pwgen netcat libopenal1
 	sudo apt install -y nvidia-utils-525-server nvidia-headless-525-server nvidia-driver-525-server sox ffmpeg libcairo2 libcairo2-dev
 	sudo apt install -y python3 python3-pip git nano neofetch net-tools mysql-server 
