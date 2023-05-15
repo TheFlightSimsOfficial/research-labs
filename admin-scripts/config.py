@@ -6,8 +6,8 @@ import os, math, sys, pwd, subprocess, pymysql
 
 ### Read MySQL password
 def mysql_get_password():
-    if os.access("/root/Scripts/mysql_password.txt", os.R_OK) == True:
-        file_path = open("/root/Scripts/mysql_password.txt", "r").read()
+    if os.access("/root/admin-scripts/mysql_password.txt", os.R_OK) == True:
+        file_path = open("/root/admin-scripts/mysql_password.txt", "r").read()
         if file_path.find('\n') != -1:
             return file_path[:-1]
         else:
@@ -29,7 +29,7 @@ def mysql_connect_string():
 ### Allow users in database, root is not allowed
 def allowed_users():
     admin_users = set()
-    for f in open('/root/Scripts/allow_users.txt', 'r'):
+    for f in open('/root/admin-scripts/allow_users.txt', 'r'):
         if f.find('#') != -1 or f == 'root':
             continue
         if f.find('\n') != -1:
@@ -41,7 +41,7 @@ def allowed_users():
 ### Add administrators, root is not allowed
 def admin_user():
     admin_users = set()
-    for f in open('/root/Scripts/admins.txt', 'r'):
+    for f in open('/root/admin-scripts/admins.txt', 'r'):
         if f.find('#') != -1 or f == 'root':
             continue
         if f.find('\n') != -1:
@@ -71,10 +71,13 @@ c.Authenticator.manage_groups = True
 
 c.Application.log_level = 'DEBUG'
 
+c.ConfigurableHTTPProxy.auth_token = '/etc/jupyter/proxy_auth_token'
+
 c.PAMAuthenticator.admin_groups = {'administrators'}
 
 c.JupyterHub.authenticator_class = 'nativeauthenticator.NativeAuthenticator'
 c.JupyterHub.api_page_default_limit = 5
+c.JupyterHub.cookie_secret_file = '/etc/jupyter/jupyterhub_cookie_secret'
 c.JupyterHub.db_url = mysql_connect_string()
 c.JupyterHub.debug_db = True
 c.JupyterHub.reset_db = False
