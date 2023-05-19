@@ -1,3 +1,3 @@
 #!/bin/bash
-sudo chmod +rwx /root/Scripts/admins.txt
-sudo nano /root/Scripts/admins.txt
+sudo chmod +rwx /root/admin-script/admins.txt
+sudo nano/root/admin-script/admins.txt
