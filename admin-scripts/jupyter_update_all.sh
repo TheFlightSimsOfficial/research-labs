@@ -12,8 +12,8 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	sudo apt update && sudo apt full-upgrade -y
 	sudo pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 sudo pip install
 	sudo pip install jupyterhub notebook jupyterlab
-	npm update npm
-	npm install
+	sudo npm update npm
+	sudo npm install
 	sudo apt remove -y python3-terminado python-terminado-doc
 	sudo pip uninstall -y terminado
 	echo "Upgrade completed"

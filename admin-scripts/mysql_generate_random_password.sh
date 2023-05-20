@@ -11,20 +11,20 @@ echo
 if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	sudo apt install -y pwgen
 	echo 'Shutting down any mysql processes...'
-	service mysql stop
-	killall -vw mysqld
-	mysqld_safe --skip-grant-tables >res 2>&1 &
+	sudo service mysql stop
+	sudo killall -vw mysqld
+	sudo mysqld_safe --skip-grant-tables >res 2>&1 &
 	echo 'Reset MySQL services behaviour...'
 	sleep 3
 	DB_ROOT_PASS_LEN=`shuf -i 20-30 -n 1`
 	DB_ROOT_PASS=`pwgen -scn $DB_ROOT_PASS_LEN 1`
-	mysql -e "FLUSH PRIVILEGES;ALTER USER 'root'@'localhost' IDENTIFIED BY '$DB_ROOT_PASS';FLUSH PRIVILEGES;"
+	sudo mysql -e "FLUSH PRIVILEGES;ALTER USER 'root'@'localhost' IDENTIFIED BY '$DB_ROOT_PASS';FLUSH PRIVILEGES;"
 	echo 'Cleaning up...'
-	killall -v mysqld
-	service mysql restart
-	rm res
+	sudo killall -v mysqld
+	sudo service mysql restart
+	sudo rm res
 	echo -e "MySQL password has been modified to the default\nMySQL default root password: $DB_ROOT_PASS\nWriting to file: mysql_password.txt"
-	echo $DB_ROOT_PASS > /etc/jupyter/mysql_password.txt
+	sudo echo $DB_ROOT_PASS > /etc/jupyter/mysql_password.txt
 else
 	echo "Aborted!"
 fi

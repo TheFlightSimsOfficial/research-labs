@@ -24,11 +24,11 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	# Copy configuration to environment folder
 	clear
 	echo -e "Copy configurations to folder..."
-	mkdir /etc/jupyter/
-	cp /root/admin-scripts/admins.txt /etc/jupyter/admins.txt
-	cp /root/admin-scripts/allow_users.txt /etc/jupyter/allow_users.txt
-	cp /root/admin-scripts/mysql_password.txt /etc/jupyter/mysql_password.txt
-    cp /root/admin-scripts/config.py /etc/jupyter/config.py
+	sudo mkdir /etc/jupyter/
+	sudo cp /root/admin-scripts/admins.txt /etc/jupyter/admins.txt
+	sudo cp /root/admin-scripts/allow_users.txt /etc/jupyter/allow_users.txt
+	sudo cp /root/admin-scripts/mysql_password.txt /etc/jupyter/mysql_password.txt
+    sudo cp /root/admin-scripts/config.py /etc/jupyter/config.py
 	
 	# Create cookie secret file and proxy authenticator
 	clear
@@ -47,7 +47,7 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	# Install NodeJS, Npm and Native Authenticator
 	clear 
 	echo -e "Installing NodeJS..."
-	curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+	sudo curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 	sudo apt update && sudo apt full-upgrade -y
 	sudo apt install -y nodejs yarn
 	sudo pip install jupyterhub-nativeauthenticator
@@ -79,7 +79,7 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	# Install Configurable HTTP Proxy
 	clear 
 	echo -e "Configuring HTTP Proxy..."
-	npm install -g configurable-http-proxy
+	sudo npm install -g configurable-http-proxy
 
 	# Install Jupyter Toolboxes
 	clear
@@ -119,8 +119,8 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	# Create a service for jupyter
 	clear
 	echo -e "Create a service for Jupyter"
-	cp jupyter.service /etc/init.d/jupyter
-    chmod +rwxrxrx /etc/init.d/jupyter
+	sudo cp jupyter.service /etc/init.d/jupyter
+    sudo chmod +rwxrxrx /etc/init.d/jupyter
 	sleep 10
 	clear
 	echo Installing dependencies...
@@ -133,26 +133,26 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	# Prepar MySQL databases
 	clear
 	echo Preparing MySQL databases...
-	service mysql stop
-	killall -vw mysqld
-	mysqld_safe --skip-grant-tables >res 2>&1 &
+	sudo service mysql stop
+	sudo killall -vw mysqld
+	sudo mysqld_safe --skip-grant-tables >res 2>&1 &
 	echo 'Resetting password... hold on'
 	sleep 5
-	mysql -e "FLUSH PRIVILEGES;ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'administrator';create database jupyterdb;FLUSH PRIVILEGES;"
+	sudo mysql -e "FLUSH PRIVILEGES;ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'administrator';create database jupyterdb;FLUSH PRIVILEGES;"
 	echo 'Cleaning up...'
-	rm res
-	killall -v mysqld
-	service mysql restart
+	sudo rm res
+	sudo killall -v mysqld
+	sudo service mysql restart
 	echo -e "MySQL password has been reset to the default\nMySQL default root password: administrator"
 	
 	# Write MySQL password to file, necessary for security. Can be changed in folder /etc/jupyter/config.py
-	echo 'administrator' > /root/admin-scripts/smysql_password.txt
+	sudo echo 'administrator' > /etc/jupyter/mysql_password.txt
 	
 	# Copy login folder
 	clear
 	echo -e "Installing Login Web Templates..."
-	rmdir --ignore-fail-on-non-empty /usr/local/share/jupyterhub/static
-	rmdir --ignore-fail-on-non-empty /usr/local/share/jupyterhub/templates
+	sudo rmdir --ignore-fail-on-non-empty /usr/local/share/jupyterhub/static
+	sudo rmdir --ignore-fail-on-non-empty /usr/local/share/jupyterhub/templates
 	sudo mkdir /usr/local/share/jupyterhub/static
 	sudo mkdir /usr/local/share/jupyterhub/templates
 	sudo cp -TRv /root/admin-scripts/user-interface/hub-login/static /usr/local/share/jupyterhub/static
@@ -161,8 +161,8 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	# Copy Lab theme folder /usr/local/share/jupyter/lab/themes
 	clear
 	echo -e "Install Lab theme" 
-	rmdir --ignore-fail-on-non-empty /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-dark-extension
-	rmdir --ignore-fail-on-non-empty /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-light-extension
+	sudo rmdir --ignore-fail-on-non-empty /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-dark-extension
+	sudo rmdir --ignore-fail-on-non-empty /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-light-extension
 	sudo mkdir /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-dark-extension
 	sudo mkdir /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-light-extension
 	sudo cp -TRv /root/admin-scripts/user-interface/lab/dark /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-dark-extension
