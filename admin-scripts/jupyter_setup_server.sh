@@ -141,7 +141,7 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	echo -e "MySQL password has been reset to the default\nMySQL default root password: administrator"
 	
 	# Write MySQL password to file, necessary for security. Can be changed in folder /etc/jupyter/config.py
-	echo 'administrator' > /root/admin-script/smysql_password.txt
+	echo 'administrator' > /root/admin-scripts/smysql_password.txt
 	
 	# Copy login folder
 	clear
