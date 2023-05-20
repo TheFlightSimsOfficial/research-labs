@@ -56,7 +56,7 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	# Usefull when you use further application, build from source (e.g. install from source from GitHub).
 	clear
 	echo -e "Installing compliers..."
-	sudo apt install -y gcc g++ gdb make cmake automake ninja-build rsync zip openssh-server openssh-client pwgen netcat libopenal1
+	sudo apt install -y gcc g++ gdb make cmake automake ninja-build rsync zip openssh-server openssh-client pwgen netcat libopenal1 wsl
 	
 	# It's only useful when you use WSL2, where GPU compute is enabled. 
 	# Plus, library in there is necessary for printing and image drawings 
