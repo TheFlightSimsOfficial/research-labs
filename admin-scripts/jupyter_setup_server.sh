@@ -102,6 +102,7 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	# Install Qiskit (Python3) for quantum computing research
 	clear
 	echo -e "Install Qiskit for python3"
+	sudo pip install --prefer-binary pyscf
 	sudo pip install qiskit qiskit-aer qiskit-ibm-provider qiskit-ibm-runtime qiskit[visualization] matlab pylatexenc qiskit_braket_provider qiskit[nature] qiskit[finance] qiskit[optimization] qiskit[machine-learning] qiskit-nature-pyscf qiskit-aqua-interfaces
 	
 	# Disable legacy features (Notebook, Extension Manager) because of security issues
