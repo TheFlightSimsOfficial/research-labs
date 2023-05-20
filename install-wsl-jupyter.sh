@@ -15,7 +15,7 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	sudo cp -TRv admin-scripts  ~/admin-scripts
 	sudo cp -TRv user-interface ~/admin-scripts/user-interface
 	sudo chmod +rwx ~/admin-scripts/*.sh
-	echo -e -n "\nInstalled admin-scripts for root user."
+	echo -e -n "\nInstalled admin-scripts for active user."
 else
 	echo "Aborted!"
 fi
