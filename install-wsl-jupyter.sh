@@ -10,12 +10,11 @@ echo
 
 if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	echo -e -n "\nNote that you can only use the scripts normally using root user.\n"
-	sudo mkdir /root/
-	sudo mkdir /root/admin-scripts
-	sudo mkdir /root/admin-scripts/user-interface
-	sudo cp -TRv admin-scripts /root/admin-scripts
-	sudo cp -TRv user-interface /root/admin-scripts/user-interface
-	sudo chmod +rwx /root/admin-scripts/*.sh
+	sudo mkdir ~/admin-scripts
+	sudo mkdir ~/admin-scripts/user-interface
+	sudo cp -TRv admin-scripts  ~/admin-scripts
+	sudo cp -TRv user-interface ~/admin-scripts/user-interface
+	sudo chmod +rwx ~/admin-scripts/*.sh
 	echo -e -n "\nInstalled admin-scripts for root user."
 else
 	echo "Aborted!"

@@ -25,10 +25,10 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	clear
 	echo -e "Copy configurations to folder..."
 	sudo mkdir /etc/jupyter/
-	sudo cp /root/admin-scripts/admins.txt /etc/jupyter/admins.txt
-	sudo cp /root/admin-scripts/allow_users.txt /etc/jupyter/allow_users.txt
-	sudo cp /root/admin-scripts/mysql_password.txt /etc/jupyter/mysql_password.txt
-    sudo cp /root/admin-scripts/config.py /etc/jupyter/config.py
+	sudo cp ~/admin-scripts/admins.txt /etc/jupyter/admins.txt
+	sudo cp ~/admin-scripts/allow_users.txt /etc/jupyter/allow_users.txt
+	sudo cp ~/admin-scripts/mysql_password.txt /etc/jupyter/mysql_password.txt
+    sudo cp ~/admin-scripts/config.py /etc/jupyter/config.py
 	
 	# Create cookie secret file and proxy authenticator
 	clear
@@ -155,8 +155,8 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	sudo rmdir --ignore-fail-on-non-empty /usr/local/share/jupyterhub/templates
 	sudo mkdir /usr/local/share/jupyterhub/static
 	sudo mkdir /usr/local/share/jupyterhub/templates
-	sudo cp -TRv /root/admin-scripts/user-interface/hub-login/static /usr/local/share/jupyterhub/static
-	sudo cp -TRv /root/admin-scripts/user-interface/hub-login/templates /usr/local/share/jupyterhub/templates
+	sudo cp -TRv ~/admin-scripts/user-interface/hub-login/static /usr/local/share/jupyterhub/static
+	sudo cp -TRv ~/admin-scripts/user-interface/hub-login/templates /usr/local/share/jupyterhub/templates
 	
 	# Copy Lab theme folder /usr/local/share/jupyter/lab/themes
 	clear
@@ -165,8 +165,8 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	sudo rmdir --ignore-fail-on-non-empty /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-light-extension
 	sudo mkdir /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-dark-extension
 	sudo mkdir /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-light-extension
-	sudo cp -TRv /root/admin-scripts/user-interface/lab/dark /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-dark-extension
-	sudo cp -TRv /root/admin-scripts/user-interface/lab/light /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-light-extension	
+	sudo cp -TRv ~/admin-scripts/user-interface/lab/dark /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-dark-extension
+	sudo cp -TRv ~/admin-scripts/user-interface/lab/light /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-light-extension	
 	
 	clear 
 	echo -e "Installed Jupyter Lab for multiple users!"
