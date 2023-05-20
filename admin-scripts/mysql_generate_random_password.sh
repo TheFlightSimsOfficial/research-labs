@@ -24,7 +24,7 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	service mysql restart
 	rm res
 	echo -e "MySQL password has been modified to the default\nMySQL default root password: $DB_ROOT_PASS\nWriting to file: mysql_password.txt"
-	echo $DB_ROOT_PASS > /root/admin-scripts/mysql_password.txt
+	echo $DB_ROOT_PASS > /etc/jupyter/mysql_password.txt
 else
 	echo "Aborted!"
 fi

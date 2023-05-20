@@ -25,6 +25,9 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	clear
 	echo -e "Copy configurations to folder..."
 	mkdir /etc/jupyter/
+	cp /root/admin-scripts/admins.txt /etc/jupyter/admins.txt
+	cp /root/admin-scripts/allow_users.txt /etc/jupyter/allow_users.txt
+	cp /root/admin-scripts/mysql_password.txt /etc/jupyter/mysql_password.txt
     cp /root/admin-scripts/config.py /etc/jupyter/config.py
 	
 	# Create cookie secret file and proxy authenticator
@@ -93,6 +96,7 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	sudo pip install jupyterlab-vega2
 	sudo pip install jupyterlab-vega3 
 	sudo pip install onnxruntime
+	sudo pip install jupyter-resource-usage
 	sudo pip install lckr-jupyterlab-variableinspector scriptedforms
 
 	# Install Qiskit (Python3) for quantum computing research

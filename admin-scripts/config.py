@@ -6,8 +6,8 @@ import os, math, sys, pwd, subprocess, pymysql
 
 ### Read MySQL password
 def mysql_get_password():
-    if os.access("/root/admin-scripts/mysql_password.txt", os.R_OK) == True:
-        file_path = open("/root/admin-scripts/mysql_password.txt", "r").read()
+    if os.access("/etc/jupyter/mysql_password.txt", os.R_OK) == True:
+        file_path = open("/etc/jupyter/mysql_password.txt", "r").read()
         if file_path.find('\n') != -1:
             return file_path[:-1]
         else:
@@ -29,7 +29,7 @@ def mysql_connect_string():
 ### Allow users in database, root is not allowed
 def allowed_users():
     admin_users = set()
-    for f in open('/root/admin-scripts/allow_users.txt', 'r'):
+    for f in open('/etc/jupyter/allow_users.txt', 'r'):
         if f.find('#') != -1 or f == 'root':
             continue
         if f.find('\n') != -1:
@@ -41,7 +41,7 @@ def allowed_users():
 ### Add administrators, root is not allowed
 def admin_user():
     admin_users = set()
-    for f in open('/root/admin-scripts/admins.txt', 'r'):
+    for f in open('/etc/jupyter/admins.txt', 'r'):
         if f.find('#') != -1 or f == 'root':
             continue
         if f.find('\n') != -1:

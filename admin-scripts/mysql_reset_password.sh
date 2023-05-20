@@ -22,7 +22,7 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	killall -v mysqld
 	service mysql restart
 	echo -e "MySQL password has been reset to the default\nMySQL default root password: administrator"
-	echo 'administrator' > /root/admin-scripts/mysql_password.txt
+	echo 'administrator' > /etc/jupyter/mysql_password.txt
 else
 	echo "Aborted!"
 fi
