@@ -93,7 +93,6 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	sudo pip install jupyterlab-vega2
 	sudo pip install jupyterlab-vega3 
 	sudo pip install onnxruntime
-	sudo pip install 
 	sudo pip install lckr-jupyterlab-variableinspector scriptedforms
 
 	# Install Qiskit (Python3) for quantum computing research
