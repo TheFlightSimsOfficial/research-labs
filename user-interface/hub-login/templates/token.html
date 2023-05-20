@@ -3,6 +3,7 @@
 {% block main %}
 
 <div class="container">
+  <h1 class="sr-only">Manage JupyterHub Tokens</h1>
   <div class="row">
     <form id="request-token-form" class="col-md-offset-3 col-md-6">
       <div class="text-center">
@@ -18,6 +19,21 @@
           placeholder="note to identify your new token">
         <small id="note-note" class="form-text text-muted">
           This note will help you keep track of what your tokens are for.
+        </small>
+        <br><br>
+        <label for="token-expiration-seconds">Token expires</label>
+        {% block expiration_options %}
+        <select id="token-expiration-seconds"
+                class="form-control">
+          <!-- unit used for each value is `seconds` -->
+          <option value="3600">1 Hour</option>
+          <option value="86400">1 Day</option>
+          <option value="604800">1 Week</option>
+          <option value="" selected="selected">Never</option>
+        </select>
+        {% endblock expiration_options %}
+        <small id="note-expires-at" class="form-text text-muted">
+          You can configure when your token will be expired.
         </small>
       </div>
     </form>
@@ -41,23 +57,17 @@
         </div>
       </div>
   </div>
-    <div class="row">
-        <div style="background: url(https://storage.googleapis.com/utd/assets/zerodata.svg) no-repeat center center; background-size: auto 100%; height: 200px;"></div>
-    </div>
+
   {% if api_tokens %}
   <div class="row">
     <h2>API Tokens</h2>
-    <p>
-      These are tokens with full access to the JupyterHub API.
-      Anything you can do with JupyterHub can be done with these tokens.
-      Revoking the API token for a running server will require restarting that server.
-    </p>
     <table class="table table-striped">
       <thead>
         <tr>
-          <td>Note</td>
-          <td>Last used</td>
-          <td>Created</td>
+          <th>Note</th>
+          <th>Last used</th>
+          <th>Created</th>
+          <th>Expires at</th>
         </tr>
       </thead>
       <tbody>
@@ -79,6 +89,13 @@
             N/A
             {%- endif -%}
           </td>
+          <td class="time-col col-sm-3">
+            {%- if token.expires_at -%}
+            {{ token.expires_at.isoformat() + 'Z' }}
+            {%- else -%}
+            Never
+            {%- endif -%}
+          </td>
           <td class="col-sm-1 text-center">
             <button class="revoke-token-btn btn btn-xs btn-danger">revoke</button>
           </td>
@@ -93,19 +110,12 @@
   {% if oauth_clients %}
   <div class="row">
     <h2>Authorized Applications</h2>
-    <p>
-      These are applications that use OAuth with JupyterHub
-      to identify users (mostly notebook servers).
-
-      OAuth tokens can generally only be used to identify you,
-      not take actions on your behalf.
-    </p>
     <table class="table table-striped">
       <thead>
         <tr>
-          <td>Application</td>
-          <td>Last used</td>
-          <td>First authorized</td>
+          <th>Application</th>
+          <th>Last used</th>
+          <th>First authorized</th>
         </tr>
       </thead>
       <tbody>

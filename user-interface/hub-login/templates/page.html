@@ -6,7 +6,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="{{key}}-label">{{title}}</h4>
+        <h1 class="modal-title" id="{{key}}-label">{{title}}</h1>
       </div>
       <div class="modal-body">
         {{ caller() }}
@@ -22,12 +22,12 @@
 
 
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
 
-    <title>{% block title %}JupyterHub from ML-Lab{% endblock %}</title>
+    <title>Research Labs - TheFlightSims</title>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -80,6 +80,7 @@
         {% else %}
         options_form: false,
         {% endif %}
+        xsrf_token: "{{ xsrf_token }}",
       }
     </script>
 
@@ -92,7 +93,7 @@
 
 <noscript>
   <div id='noscript'>
-    JupyterHub requires JavaScript.<br>
+    Research Labs requires JavaScript.<br>
     Please enable it to proceed.
   </div>
 </noscript>
@@ -103,7 +104,7 @@
       <div class="navbar-header">
         {% block logo %}
         <span id="jupyterhub-logo" class="pull-left">
-            <a href="{{logo_url or base_url}}"><img src='{{base_url}}logo' alt='JupyterHub' class='jpy-logo' title='Home'/></a>
+            <a href="{{logo_url or base_url}}"><img src='{{base_url}}logo' alt='Research Labs logo' class='jpy-logo' title='Home'/></a>
         </span>
         {% endblock %}
         {% if user %}
@@ -121,9 +122,12 @@
         <ul class="nav navbar-nav">
           {% block nav_bar_left_items %}
             <li><a href="{{base_url}}home">Home</a></li>
-            <li><a href="{{base_url}}security/csp-report">Monitoring</a></li>
             <li><a href="{{base_url}}token">Token</a></li>
-            {% if user.admin %}
+			<li><a href="{{base_url}}change-password">Change Password</a></li>
+			{% if user.admin %}
+				<li><a href="{{base_url}}authorize">Authorize Users</a></li>
+			{% endif %}
+            {% if 'admin-ui' in parsed_scopes %}
             <li><a href="{{base_url}}admin">Admin</a></li>
             {% endif %}
             {% if services %}
@@ -131,7 +135,9 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services<span class="caret"></span></a>
               <ul class="dropdown-menu">
               {% for service in services %}
+              {% block service scoped %}
                 <li><a class="dropdown-item" href="{{service.prefix}}">{{service.name}}</a></li>
+              {% endblock %}
               {% endfor %}
               </ul>
             </li>
@@ -145,7 +151,7 @@
               {% block login_widget %}
                 <span id="login_widget">
                   {% if user %}
-		            <p class="navbar-text">{{user.name}}</p>
+                    <p class="navbar-text">{{user.name}}</p>
                     <a id="logout" role="button" class="navbar-btn btn-sm btn btn-default" href="{{logout_url}}"> <i aria-hidden="true" class="fa fa-sign-out"></i> Logout</a>
                   {% else %}
                     <a id="login" role="button" class="btn-sm btn navbar-btn btn-default" href="{{login_url}}">Login</a>
