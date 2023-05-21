@@ -69,16 +69,6 @@ c.Authenticator.enable_auth_state = False
 c.Authenticator.auto_login_oauth2_authorize = False
 c.Authenticator.manage_groups = True
 
-c.Application.logging_config = {
-    'handlers': {
-        'file': {
-            'class': 'logging.FileHandler',
-            'level': 'DEBUG',
-            'filename': '~/jupyter.log',
-        }
-    }
-}
-
 c.Application.log_level = 'DEBUG'
 
 c.ConfigurableHTTPProxy.auth_token = '/etc/jupyter/proxy_auth_token'
