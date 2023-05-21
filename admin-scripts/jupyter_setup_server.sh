@@ -47,6 +47,10 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	sudo apt install -y nodejs yarn
 	sudo pip install jupyterhub-nativeauthenticator
 	
+	# Install Configurable HTTP Proxy 
+	echo -e "Configuring HTTP Proxy..."
+	sudo npm install -g configurable-http-proxy
+	
 	# Install compliers (GCC, G++, MAKE and ninja-build), remoting (OpenSSH), Password Generator, Network diagnostics and OpenAl library.
 	# Usefull when you use further application, build from source (e.g. install from source from GitHub).
 	echo -e "Installing compliers..."
@@ -67,10 +71,6 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	# Install C++ Xeus kernels
 	echo -e "Installing C++ Kernels..."
 	sudo apt install -y libxeus-cling0 libxeus1 libxeus6 libxwidgets1 xcpp xeus-cling-dev xeus-dev xwidgets-dev r-cran-irdisplay r-cran-repr
-
-	# Install Configurable HTTP Proxy 
-	echo -e "Configuring HTTP Proxy..."
-	sudo npm install -g configurable-http-proxy
 
 	# Install Jupyter Toolboxes
 	echo -e "Installing tools for JupyterLab"
