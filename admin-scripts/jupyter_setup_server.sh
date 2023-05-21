@@ -107,7 +107,7 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 
 	# Create a service for jupyter
 	echo -e "Create a service for Jupyter"
-	sudo cp jupyter.service /etc/init.d/jupyter
+	sudo cp ~/admin-scripts/jupyter.service /etc/init.d/jupyter
     sudo chmod +rwxrxrx /etc/init.d/jupyter
 	sleep 10
 	echo Installing dependencies...
