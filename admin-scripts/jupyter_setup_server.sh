@@ -151,7 +151,7 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	sudo cp -TRv ~/admin-scripts/user-interface/lab/dark /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-dark-extension
 	sudo cp -TRv ~/admin-scripts/user-interface/lab/light /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-light-extension	
 	 
-	echo -e "Installed Jupyter Lab for multiple users!"
+	echo -e "\nInstalled Jupyter Lab for multiple users!"
 else
 	echo "Aborted!"
 fi
