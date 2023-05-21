@@ -42,7 +42,7 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	
 	# Install NodeJS, Npm and Native Authenticator 
 	echo -e "Installing NodeJS..."
-	sudo curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+	curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 	sudo apt update && sudo apt full-upgrade -y
 	sudo apt install -y nodejs yarn
 	sudo pip install jupyterhub-nativeauthenticator
