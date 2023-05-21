@@ -47,10 +47,6 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	sudo apt install -y nodejs yarn
 	sudo pip install jupyterhub-nativeauthenticator
 	
-	# Install Configurable HTTP Proxy 
-	echo -e "Configuring HTTP Proxy..."
-	sudo npm install -g configurable-http-proxy
-	
 	# Install compliers (GCC, G++, MAKE and ninja-build), remoting (OpenSSH), Password Generator, Network diagnostics and OpenAl library.
 	# Usefull when you use further application, build from source (e.g. install from source from GitHub).
 	echo -e "Installing compliers..."
@@ -63,8 +59,13 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	
 	# Install JupyterLab cores (Hub, Notebook, Lab, Voial, Scipy, Urllib4, sympy and mysql connectors)
 	echo -e "Installing Jupyter PIP packages"
-	sudo pip install jupyterhub notebook jupyterlab voila scipy pexpect nest-asyncio sympy urllib3  manimlib pymysql
-	
+	sudo pip install jupyterhub notebook jupyterlab 
+	sudo pip install voila scipy pexpect nest-asyncio sympy urllib3  manimlib pymysql
+
+	# Install Configurable HTTP Proxy 
+	echo -e "Configuring HTTP Proxy..."
+	sudo npm install -g configurable-http-proxy
+
 	# Install Jupyter Core and Jupyter Server
 	sudo apt install -y jupyter-core jupyter-server 
 
