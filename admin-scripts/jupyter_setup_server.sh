@@ -45,56 +45,19 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 	sudo apt update && sudo apt full-upgrade -y
 	sudo apt install -y nodejs yarn
-	sudo pip install jupyterhub-nativeauthenticator
 	
 	# Install compliers (GCC, G++, MAKE and ninja-build), remoting (OpenSSH), Password Generator, Network diagnostics and OpenAl library.
+	# Also install NVIDIA Drivers and CUDA compliers for users whom WSL2 installed.
 	# Usefull when you use further application, build from source (e.g. install from source from GitHub).
 	echo -e "Installing compliers..."
-	sudo apt install -y gcc g++ gdb make cmake automake ninja-build rsync zip openssh-server openssh-client pwgen netcat libopenal1 wsl
+	sudo apt install -y gcc g++ gdb make cmake automake ninja-build rsync zip openssh-server openssh-client pwgen netcat libopenal1 wsl libcurl4-gnutls-dev librtmp-dev nvidia-utils-525-server nvidia-headless-525-server nvidia-driver-525-server sox ffmpeg libcairo2 libcairo2-dev
 	
-	# It's only useful when you use WSL2, where GPU compute is enabled. 
-	# Plus, library in there is necessary for printing and image drawings 
-	sudo apt install -y nvidia-utils-525-server nvidia-headless-525-server nvidia-driver-525-server sox ffmpeg libcairo2 libcairo2-dev
+	# Plus, install Python3
 	sudo apt install -y python3 python3-pip git nano neofetch net-tools mysql-server 
 	
-	# Install JupyterLab cores (Hub, Notebook, Lab, Voial, Scipy, Urllib4, sympy and mysql connectors)
-	echo -e "Installing Jupyter PIP packages"
-	sudo pip install jupyterhub notebook jupyterlab 
-	sudo pip install voila scipy pexpect nest-asyncio sympy urllib3  manimlib pymysql
+	# Install PIP packages
+	sudo pip install git+https://github.com/qiskit-community/Quantum-Challenge-Grader.git
 
-	# Install Configurable HTTP Proxy 
-	echo -e "Configuring HTTP Proxy..."
-	sudo npm install -g configurable-http-proxy
-
-	# Install Jupyter Core and Jupyter Server
-	sudo apt install -y jupyter-core jupyter-server 
-
-	# Install C++ Xeus kernels
-	echo -e "Installing C++ Kernels..."
-	sudo apt install -y libxeus-cling0 libxeus1 libxeus6 libxwidgets1 xcpp xeus-cling-dev xeus-dev xwidgets-dev r-cran-irdisplay r-cran-repr
-
-	# Install Jupyter Toolboxes
-	echo -e "Installing tools for JupyterLab"
-	sudo pip install jlab-enhanced-cell-toolbar jlab-enhanced-launcher jupyterlab_image_editor jupyter-archive jupyterlab-cell-flash ipysheet ipywidgets ipympl pyflyby jupyterlab-git jupyterlab_autoversion jupyterlab-pullrequests jupyterlab_pyflyby
-	sudo pip install jupyterlab-favorites jupyterlab-kernelspy jupyterlab-link-share jupyterlab-logout jupyterlab-open-url-parameter jupyterlab-pytutor jupyterlab-recents jupyterlab-tour 
-	sudo pip install jupyterlab-spreadsheet-editor stickyland jupyterlab_genv jupyterlab-code-formatter aquirdturtle_collapsible_headings jupyterlab-drawio jupyterlab-lsp jupyterlab_markup jupyterlab_execute_time jupyterlab_limit_output jupyterlab-skip-traceback jupyterlab-dash
-	
-	# Install Jupyter Lab display kernels, differ from language kernels
-	sudo pip install jupyterlab-fasta
-	sudo pip install jupyterlab-geojson
-	sudo pip install jupyterlab-katex
-	sudo pip install jupyterlab-mathjax3
-	sudo pip install jupyterlab-vega2
-	sudo pip install jupyterlab-vega3 
-	sudo pip install onnxruntime
-	sudo pip install jupyter-resource-usage
-	sudo pip install lckr-jupyterlab-variableinspector scriptedforms
-
-	# Install Qiskit (Python3) for quantum computing research
-	echo -e "Install Qiskit for python3"
-	sudo pip install --prefer-binary pyscf
-	sudo pip install qiskit qiskit-aer qiskit-ibm-provider qiskit-ibm-runtime qiskit[visualization] matlab pylatexenc qiskit_braket_provider qiskit[nature] qiskit[finance] qiskit[optimization] qiskit[machine-learning] qiskit-nature-pyscf qiskit-aqua-interfaces
-	
 	# Disable legacy features (Notebook, Extension Manager) because of security issues
 	echo -e "Disabling the classic mode"
 	sudo jupyter labextension disable @jupyterlab/extensionmanager-extension
@@ -128,7 +91,7 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	sudo rm res
 	sudo killall -v mysqld
 	sudo service mysql restart
-	echo -e "MySQL password has been reset to the default\nMySQL default root password: administrator"
+	echo -e "MySQL password has been reset to the default\nMySQL default root password: administrator\n\n"
 	
 	# Write MySQL password to file, necessary for security. Can be changed in folder /etc/jupyter/config.py
 	sudo echo 'administrator' > /etc/jupyter/mysql_password.txt
@@ -141,15 +104,6 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	sudo mkdir /usr/local/share/jupyterhub/templates
 	sudo cp -TRv ~/admin-scripts/user-interface/hub-login/static /usr/local/share/jupyterhub/static
 	sudo cp -TRv ~/admin-scripts/user-interface/hub-login/templates /usr/local/share/jupyterhub/templates
-	
-	# Copy Lab theme folder /usr/local/share/jupyter/lab/themes
-	echo -e "Install Lab theme" 
-	sudo rmdir --ignore-fail-on-non-empty /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-dark-extension
-	sudo rmdir --ignore-fail-on-non-empty /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-light-extension
-	sudo mkdir /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-dark-extension
-	sudo mkdir /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-light-extension
-	sudo cp -TRv ~/admin-scripts/user-interface/lab/dark /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-dark-extension
-	sudo cp -TRv ~/admin-scripts/user-interface/lab/light /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-light-extension	
 	 
 	echo -e "\nInstalled Jupyter Lab for multiple users!"
 else
