@@ -57,6 +57,7 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	
 	# Install PIP packages
 	sudo pip install git+https://github.com/qiskit-community/Quantum-Challenge-Grader.git
+	
 
 	# Disable legacy features (Notebook, Extension Manager) because of security issues
 	echo -e "Disabling the classic mode"
