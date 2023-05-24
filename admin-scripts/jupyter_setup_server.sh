@@ -55,6 +55,9 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	sudo chmod 600 /etc/jupyter/jupyterhub_cookie_secret
 	sudo chmod 600 /etc/jupyter/proxy_auth_token
 	
+	# Install Configurable HTTP proxy
+	sudo npm install -g configurable-http-proxy
+	
 	# Install PIP build packages
 	sudo pip install git+https://github.com/qiskit-community/Quantum-Challenge-Grader.git
 	sudo pip install manimlib manimce 
