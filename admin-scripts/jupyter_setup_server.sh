@@ -17,7 +17,7 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	echo -e "Add Xeus C++ kernel to repository..."
 	sudo add-apt-repository ppa:ppa-verse/xeus-cling --yes
 	sudo apt full-upgrade -y
-    sudo apt install -y openssl pwgen netcat
+	sudo apt install -y openssl pwgen netcat
 
 	# Install NodeJS, Npm and Native Authenticator 
 	echo -e "Installing NodeJS..."
@@ -40,20 +40,20 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	sudo cp ~/admin-scripts/admins.txt /etc/jupyter/admins.txt
 	sudo cp ~/admin-scripts/allow_users.txt /etc/jupyter/allow_users.txt
 	sudo cp ~/admin-scripts/mysql_password.txt /etc/jupyter/mysql_password.txt
-    sudo cp ~/admin-scripts/config.py /etc/jupyter/config.py
+	sudo cp ~/admin-scripts/config.py /etc/jupyter/config.py
 	
 	# Create cookie secret file and proxy authenticator
 	echo -e "Creating authenticator"
-    sudo touch /etc/jupyter/proxy_auth_token
-    sudo chown :sudo /etc/jupyter/proxy_auth_token
-    sudo chmod g+rw /etc/jupyter/proxy_auth_token
-    sudo openssl rand -hex 32 > /etc/jupyter/proxy_auth_token
-    sudo touch /etc/jupyter/jupyterhub_cookie_secret
-    sudo chown :sudo /etc/jupyter/jupyterhub_cookie_secret
-    sudo chmod g+rw /etc/jupyter/jupyterhub_cookie_secret
-    sudo openssl rand -hex 32 > /etc/jupyter/jupyterhub_cookie_secret
-    sudo chmod 600 /etc/jupyter/jupyterhub_cookie_secret
-    sudo chmod 600 /etc/jupyter/proxy_auth_token
+	sudo touch /etc/jupyter/proxy_auth_token
+	sudo chown :sudo /etc/jupyter/proxy_auth_token
+	sudo chmod g+rw /etc/jupyter/proxy_auth_token
+	sudo openssl rand -hex 32 > /etc/jupyter/proxy_auth_token
+	sudo touch /etc/jupyter/jupyterhub_cookie_secret
+	sudo chown :sudo /etc/jupyter/jupyterhub_cookie_secret
+	sudo chmod g+rw /etc/jupyter/jupyterhub_cookie_secret
+	sudo openssl rand -hex 32 > /etc/jupyter/jupyterhub_cookie_secret
+	sudo chmod 600 /etc/jupyter/jupyterhub_cookie_secret
+	sudo chmod 600 /etc/jupyter/proxy_auth_token
 	
 	# Install PIP build packages
 	sudo pip install git+https://github.com/qiskit-community/Quantum-Challenge-Grader.git
@@ -64,7 +64,7 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	sudo cp -TRv ~/admin-scripts/jupyter-external-packages/ibm-q-lab/jupyter-lab-ext /usr/local/share/jupyter/labextensions
 
 	# Sudo install PIP packages from database
-	sudo pip install -r pip-packages.txt
+	sudo pip install -r ~/admin-scripts/pip-packages.txt
 
 	# Disable legacy features (Notebook, Extension Manager) because of security issues
 	echo -e "Disabling the classic mode"
@@ -79,7 +79,7 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	# Create a service for jupyter
 	echo -e "Create a service for Jupyter"
 	sudo cp ~/admin-scripts/rl.service /etc/init.d/jupyter
-    sudo chmod +rwxrxrx /etc/init.d/jupyter
+	sudo chmod +rwxrxrx /etc/init.d/jupyter
 	sleep 10
 	echo Installing dependencies...
 	
