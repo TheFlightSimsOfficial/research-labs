@@ -70,6 +70,8 @@ launchpadlib==1.10.16
 lazy-loader==0.2
 lckr-jupyterlab-variableinspector==3.0.9
 lz4==4.3.2
+manimcs==0.4.7
+manim-course-utils==1.0.0
 mamba==0.11.0
 mapomatic==0.5.0
 markdown==3.3.6
@@ -110,8 +112,10 @@ statsmodels==0.13.5
 stickyland==0.2.1
 system-info==2.0.0
 systemd-python==234
+rich==13.3.5
 tables==3.7.0
 ttystatus==0.38
+typing-extensions==4.6.1
 ubuntu-advantage-tools==8001
 ufw==0.36.1
 unattended-upgrades==0.1
