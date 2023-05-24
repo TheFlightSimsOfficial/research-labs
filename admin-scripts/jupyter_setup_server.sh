@@ -60,7 +60,7 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	
 	# Install PIP build packages
 	sudo pip install git+https://github.com/qiskit-community/Quantum-Challenge-Grader.git
-	sudo pip install manimlib manimce 
+	sudo pip install manimlib pymysql
 
 	# Copy legacy Qiskit and IBM-Q packages
 	sudo cp -TRv ~/admin-scripts/jupyter-external-packages/ibm-q-lab/python310-dist-packages /usr/local/lib/python3.10/dist-packages
@@ -195,10 +195,15 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	sudo pip install 'webcolors==1.12'
 	sudo pip install 'xlrd==2.0.1'
 	
+	# Installing kernel
+	sudo apt install -y libxeus-cling0 libxeus1 libxeus6 libxwidgets1 r-cran-irdisplay r-cran-irkernel r-cran-repr ruby-ipynbdiff xcpp xeus-cling-dev xeus-dev xwidgets-dev
+	sudo pip install jupyter-matlab-proxy
+	
 	# Disable legacy features (Notebook, Extension Manager) because of security issues
 	echo -e "Disabling the classic mode"
 	sudo jupyter labextension disable @jupyterlab/extensionmanager-extension
 	sudo jupyter labextension disable @jupyterlab/help-extension:launch-classic
+	sudo jupyter labextension disable @quantum/lab-ui
 
 	# Disable remoting linux terminal
 	sudo apt remove -y python3-terminado python-terminado-doc
