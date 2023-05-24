@@ -34,7 +34,7 @@ jsonpointer==2.3
 jupyter-archive==3.3.4
 jupyter-matlab-proxy==0.5.3
 jupyter-resource-usage==0.7.0
-jupyter-server=2.5.0
+jupyter-server==2.5.0
 jupyterhub-nativeauthenticator==1.1.0
 jupyterlab==3.6.1
 jupyterlab-autoversion==0.3.6
