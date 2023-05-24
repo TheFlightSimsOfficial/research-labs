@@ -36,6 +36,7 @@ jupyter-matlab-proxy==0.5.3
 jupyter-resource-usage==0.7.0
 jupyter-server-terminals==0.4.4
 jupyterhub-nativeauthenticator==1.1.0
+jupyterlab==3.6.1
 jupyterlab-autoversion==0.3.6
 jupyterlab-cell-flash==0.3.5
 jupyterlab-code-formatter==2.0.0
