@@ -92,8 +92,6 @@ pygobject==3.42.1
 pylatexenc==2.10
 pymysql==1.0.3
 pysocks==1.7.1
-python-apt==0.7.8
-qc-grader==0.15.3
 qiskit-aqua-interfaces==0.2.1
 qiskit-braket-provider==0.0.3
 qiskit-dynamics==0.4.0
