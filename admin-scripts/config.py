@@ -59,7 +59,7 @@ def pre_spawn_hook(spawner):
         # Add user using useradd
         subprocess.check_call(['useradd', '-ms', '/bin/bash', username])
         # Copy tutorial notebooks from /etc/jupyter/tutorial-notebook to user folder
-        os.system('sudo cp -TRv /etc/jupyter/tutorial-notebooks /home/' + str(username))
+        os.system('sudo cp -TRv /etc/jupyter/tutorials-notebooks /home/' + str(username))
         # Set permission for this folder in ~
         os.system('sudo chmod 400 /home/' + str(username) + "/*")
 ###
