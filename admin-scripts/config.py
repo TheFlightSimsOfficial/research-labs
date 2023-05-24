@@ -53,15 +53,12 @@ def admin_user():
 ### Spawn mode
 def pre_spawn_hook(spawner):
     username = spawner.user.name
+    subprocess.check_call(['cp', '-TRv', '/etc/jupyter/tutorials-notebooks', '/home/' + username])
+    subprocess.check_call(['chmod', '400', '/home/' + username + '/*'])
     try:
         pwd.getpwnam(username)
     except KeyError:
-        # Add user using useradd
         subprocess.check_call(['useradd', '-ms', '/bin/bash', username])
-        # Copy tutorial notebooks from /etc/jupyter/tutorial-notebook to user folder
-        os.system('sudo cp -TRv /etc/jupyter/tutorials-notebooks /home/' + str(username))
-        # Set permission for this folder in ~
-        os.system('sudo chmod 400 /home/' + str(username) + "/*")
 ###
 
 ###############################
