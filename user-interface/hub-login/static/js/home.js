@@ -120,7 +120,4 @@ require(["jquery", "moment", "jhapi"], function ($, moment, JHAPI) {
     var m = moment(new Date(el.text().trim()));
     el.text(m.isValid() ? m.fromNow() : "Never");
   });
-
-  // signal that page has finished loading (mostly for tests)
-  window._jupyterhub_page_loaded = true;
 });

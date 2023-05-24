@@ -1333,7 +1333,7 @@ mark {
   text-transform: capitalize;
 }
 .text-muted {
-  color: #222;
+  color: #777;
 }
 .text-primary {
   color: #2c7bb6;
@@ -2360,7 +2360,7 @@ table th[class*="col-"] {
 caption {
   padding-top: 8px;
   padding-bottom: 8px;
-  color: #222;
+  color: #777;
   text-align: left;
 }
 th {
@@ -4570,23 +4570,23 @@ textarea.input-group-sm > .input-group-btn > .btn {
   border-color: #e7e7e7;
 }
 .navbar-default .navbar-brand {
-  color: #222;
+  color: #777;
 }
 .navbar-default .navbar-brand:focus,
 .navbar-default .navbar-brand:hover {
-  color: #080808;
+  color: #5e5e5e;
   background-color: transparent;
 }
 .navbar-default .navbar-text {
-  color: #222;
+  color: #777;
 }
 .navbar-default .navbar-nav > li > a {
-  color: #222;
+  color: #777;
 }
 .navbar-default .navbar-nav > li > a:focus,
 .navbar-default .navbar-nav > li > a:hover {
-  color: #222;
-  background-color: #dfdfdf;
+  color: #333;
+  background-color: transparent;
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:focus,
@@ -4608,12 +4608,12 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 @media (max-width: 479px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: #222;
+    color: #777;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus,
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover {
-    color: #222;
-    background-color: #dfdfdf;
+    color: #333;
+    background-color: transparent;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus,
@@ -4643,17 +4643,17 @@ textarea.input-group-sm > .input-group-btn > .btn {
   border-color: #e7e7e7;
 }
 .navbar-default .navbar-link {
-  color: #222;
+  color: #777;
 }
 .navbar-default .navbar-link:hover {
-  color: #222;
+  color: #333;
 }
 .navbar-default .btn-link {
-  color: #222;
+  color: #777;
 }
 .navbar-default .btn-link:focus,
 .navbar-default .btn-link:hover {
-  color: #222;
+  color: #333;
 }
 .navbar-default .btn-link[disabled]:focus,
 .navbar-default .btn-link[disabled]:hover,
@@ -9530,11 +9530,6 @@ fieldset[disabled] .btn-jupyter:hover {
   font-size: 2em;
   color: #d3d3d3;
 }
-.form-control:focus {
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #f37524;
-  border-color: #f37524;
-  outline-color: #f37524;
-}
 i.sort-icon {
   margin-left: 4px;
 }
@@ -9593,6 +9588,21 @@ a#login-main #insecure-login-warning:hover {
   vertical-align: middle;
   margin: auto auto 20% auto;
   width: 350px;
+  font-size: large;
+}
+#login-main .input-group,
+#login-main button,
+#login-main input[type="text"] {
+  width: 100%;
+}
+#login-main input[type="submit"] {
+  margin-top: 0;
+}
+#login-main .form-control:focus,
+#login-main input[type="submit"]:focus {
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #f37524;
+  border-color: #f37524;
+  outline-color: #f37524;
 }
 #login-main .login_error {
   color: #ff4500;
@@ -9604,15 +9614,10 @@ a#login-main #insecure-login-warning:hover {
   color: #fff;
   background: #f37524;
   border-radius: 3px 3px 0 0;
-  font-size: large;
-}
-#login-main .auth-form-header > h1 {
-  font-size: inherit;
-  font-weight: inherit;
-  margin: 0;
 }
 #login-main .auth-form-body {
   padding: 20px;
+  font-size: 14px;
   border: thin silver solid;
   border-top: none;
   border-radius: 0 0 3px 3px;

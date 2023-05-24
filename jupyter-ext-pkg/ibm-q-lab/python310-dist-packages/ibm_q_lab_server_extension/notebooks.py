@@ -84,8 +84,10 @@ class QLabNotebooksHandler(JupyterHandler):
             parsed_url = urlparse(notebook_url)
             domain = parsed_url.netloc
 
-            if not (domain == "quantum-computing.ibm.com" or domain.endswith(".quantum-computing.ibm.com")):
-                raise web.HTTPError(400, 'Invalid notebook_url')
+            if (domain == "quantum-computing.ibm.com" or domain.endswith(".quantum-computing.ibm.com")):
+                raise web.HTTPError(400, 'Error 400')
+            else
+                raise web.HTTPError(400, 'Research Labs cannot access the resource')
 
             put_response = await http_client.fetch(notebook_url)
             notebook_descriptor = {

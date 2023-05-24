@@ -55,12 +55,16 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
     sudo chmod 600 /etc/jupyter/jupyterhub_cookie_secret
     sudo chmod 600 /etc/jupyter/proxy_auth_token
 	
-
-	# Install PIP packages
+	# Install PIP build packages
 	sudo pip install git+https://github.com/qiskit-community/Quantum-Challenge-Grader.git
+	sudo pip install manimlib manimce 
 
 	# Copy legacy Qiskit and IBM-Q packages
+	sudo cp -TRv ~/admin-scripts/jupyter-external-packages/ibm-q-lab/python310-dist-packages /usr/local/lib/python3.10/dist-packages
+	sudo cp -TRv ~/admin-scripts/jupyter-external-packages/ibm-q-lab/jupyter-lab-ext /usr/local/share/jupyter/labextensions
 
+	# Sudo install PIP packages from database
+	sudo pip install -r pip-packages.txt
 
 	# Disable legacy features (Notebook, Extension Manager) because of security issues
 	echo -e "Disabling the classic mode"
@@ -74,7 +78,7 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 
 	# Create a service for jupyter
 	echo -e "Create a service for Jupyter"
-	sudo cp ~/admin-scripts/jupyter.service /etc/init.d/jupyter
+	sudo cp ~/admin-scripts/rl.service /etc/init.d/jupyter
     sudo chmod +rwxrxrx /etc/init.d/jupyter
 	sleep 10
 	echo Installing dependencies...
@@ -113,6 +117,7 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	echo -e "Coping tutorial notebooks into global folder..."
 	sudo mkdir /etc/jupyter/tutorials-notebooks
 	sudo cp -TRv ~/admin-scripts/tutorials-notebooks /etc/jupyter/tutorials-notebooks
+	sudo chmod +rwxrxrx /etc/jupyter/tutorials-notebooks
 
 	echo -e "\nInstalled Jupyter Lab for multiple users!"
 else
