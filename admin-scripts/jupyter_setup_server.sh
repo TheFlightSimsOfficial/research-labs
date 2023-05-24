@@ -64,7 +64,8 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	sudo cp -TRv ~/admin-scripts/jupyter-external-packages/ibm-q-lab/jupyter-lab-ext /usr/local/share/jupyter/labextensions
 
 	# Sudo install PIP packages from database
-	sudo pip install -r ~/admin-scripts/pip-packages.txt
+	sudo pip install -r ~/admin-scripts/jupyter-core-packages.txt
+	sudo pip install -r ~/admin-scripts/jupyterlab-extensions.txt
 
 	# Disable legacy features (Notebook, Extension Manager) because of security issues
 	echo -e "Disabling the classic mode"
