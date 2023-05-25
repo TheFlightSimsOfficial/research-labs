@@ -1,0 +1,215 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>IBM Quantum Lab</title><meta name="viewport" content="width=device-width,initial-scale=1">{# Copy so we do not modify the page_config with updates. #} {% set page_config_full = page_config.copy() %} {# Set a dummy variable - we just want the side effect of the update. #} {% set _ = page_config_full.update(baseUrl=base_url, wsUrl=ws_url) %}<script id="jupyter-config-data" type="application/json">{{ page_config_full | tojson }}</script>{% block favicon %}<link rel="icon" type="image/x-icon" href="{{ base_url | escape }}static/favicons/favicon.ico" class="idle favicon"><link rel="" type="image/x-icon" href="{{ base_url | escape }}static/favicons/favicon-busy-1.ico" class="busy favicon">{% endblock %}<script defer="defer" src="{{page_config.fullStaticUrl}}/main.ad8f2997ac17282bb96c.js?v=ad8f2997ac17282bb96c"></script>
+<style>
+  #custom-jupyterlab-splash {
+    top: 0;
+    left: 0;
+    z-index: 10;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--cds-ui-background, #f4f4f4);
+  }
+
+  #custom-main-logo {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+  }
+
+  #custom-main-logo svg {
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    fill: var(--cds-inverse-02, #393939);
+  }
+
+  .custom-splash-fade-in {
+    animation: 0.5s custom-splash-fade-in forwards 0s;
+  }
+
+  .custom-splash-fade-out {
+    animation: 0.5s custom-splash-fade-out forwards 0s;
+  }
+
+  .custom-splash-hidden {
+    display: none;
+  }
+
+  #custom-galaxy {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  #custom-moon1.custom-orbit {
+    opacity: 1;
+    animation: 2s ease 0s infinite normal both running custom-orbit;
+    width: 200px;
+    height: 140px;
+    margin-top: -53px;
+    margin-left: -54px;
+  }
+
+  #custom-moon2.custom-orbit {
+    opacity: 1;
+    animation: 2s ease 0s infinite normal both running custom-orbit;
+    width: 132px;
+    height: 180px;
+    margin-top: -66px;
+    margin-left: -85px;
+  }
+
+  #custom-moon3.custom-orbit {
+    opacity: 1;
+    display: flex;
+    align-items: flex-end;
+    animation: 2s ease 0s infinite normal both running custom-orbit;
+    width: 220px;
+    height: 166px;
+    margin-top: -96px;
+    margin-left: -50px;
+  }
+
+  #custom-moon1 .custom-planet {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+  }
+
+  #custom-moon2 .custom-planet {
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    float: right;
+  }
+
+  #custom-moon3 .custom-planet {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+  }
+
+  #custom-jupyterlab-splash #custom-moon1 .custom-planet,
+  #custom-jupyterlab-splash #custom-moon2 .custom-planet,
+  #custom-jupyterlab-splash #custom-moon3 .custom-planet {
+    background-color: var(--cds-inverse-02, #393939);
+  }
+
+  .custom-orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+  }
+
+  @keyframes custom-orbit {
+    0% { transform: rotateZ(0deg); }
+    100% { transform: rotateZ(-720deg); }
+  }
+
+  @keyframes custom-splash-fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  @keyframes custom-splash-fade-out {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+</style>
+</head><body><script>/* Remove token from URL. */
+  (function () {
+    var location = window.location;
+    var search = location.search;
+
+    // If there is no query string, bail.
+    if (search.length <= 1) {
+      return;
+    }
+
+    // Rebuild the query string without the `token`.
+    var query = '?' + search.slice(1).split('&')
+      .filter(function (param) { return param.split('=')[0] !== 'token'; })
+      .join('&');
+
+    // Rebuild the URL with the new query string.
+    var url = location.origin + location.pathname +
+      (query !== '?' ? query : '') + location.hash;
+
+    if (url === location.href) {
+      return;
+    }
+
+    window.history.replaceState({ }, '', url);
+  })();</script>
+<script>	
+  (function () {
+      const logoSVG = `
+      <svg xmlns="http://www.w3.org/2000/svg" id="custom-bee" viewBox="0 0 32 32">
+      <g>
+        <path
+          d="M16,10a6,6,0,0,0-6,6v8a6,6,0,0,0,12,0V16A6,6,0,0,0,16,10Zm-4.25,7.87h8.5v4.25h-8.5ZM16,28.25A4.27,4.27,0,0,1,11.75,24v-.13h8.5V24A4.27,4.27,0,0,1,16,28.25Zm4.25-12.13h-8.5V16a4.25,4.25,0,0,1,8.5,0Z">
+        </path>
+        <path
+          d="M30.66,19.21,24,13v9.1a4,4,0,0,0,8,0A3.83,3.83,0,0,0,30.66,19.21ZM28,24.35a2.25,2.25,0,0,1-2.25-2.25V17l3.72,3.47h0A2.05,2.05,0,0,1,30.2,22,2.25,2.25,0,0,1,28,24.35Z">
+        </path>
+        <path
+          d="M0,22.1a4,4,0,0,0,8,0V13L1.34,19.21A3.88,3.88,0,0,0,0,22.1Zm2.48-1.56h0L6.25,17v5.1a2.25,2.25,0,0,1-4.5,0A2.05,2.05,0,0,1,2.48,20.54Z">
+        </path>
+        <path
+          d="M15,5.5A3.5,3.5,0,1,0,11.5,9,3.5,3.5,0,0,0,15,5.5Zm-5.25,0A1.75,1.75,0,1,1,11.5,7.25,1.77,1.77,0,0,1,9.75,5.5Z">
+        </path>
+        <path
+          d="M20.5,2A3.5,3.5,0,1,0,24,5.5,3.5,3.5,0,0,0,20.5,2Zm0,5.25A1.75,1.75,0,1,1,22.25,5.5,1.77,1.77,0,0,1,20.5,7.25Z">
+        </path>
+      </g>
+      </svg>
+      `;
+
+      function createSplash() {
+        const parser = new DOMParser();
+
+        const splash = document.createElement('div');
+        const galaxy = document.createElement('div');
+        const logo = document.createElement('div');
+        const splashIcon = parser.parseFromString(logoSVG, "image/svg+xml");
+
+        splash.id = 'custom-jupyterlab-splash';
+        galaxy.id = 'custom-galaxy';
+        logo.id = 'custom-main-logo';
+
+        splash.className = 'custom-splash-fade-in';
+
+        logo.appendChild(splashIcon.documentElement);
+
+        galaxy.appendChild(logo);
+        ['1', '2', '3'].forEach(id => {
+          const moon = document.createElement('div');
+          const planet = document.createElement('div');
+
+          moon.id = `custom-moon${id}`;
+          moon.className = 'custom-moon custom-orbit';
+          planet.id = `custom-planet${id}`;
+          planet.className = 'custom-planet';
+
+          moon.appendChild(planet);
+          galaxy.appendChild(moon);
+        });
+
+        splash.appendChild(galaxy);
+
+        const observer = new MutationObserver(function() {
+          if (document.body) {
+            const t = document.body.appendChild(splash);
+            observer.disconnect();
+          }
+        });
+        observer.observe(document.documentElement, {childList: true});
+      }
+      createSplash();
+    }
+  )();
+</script>
+</body></html>
