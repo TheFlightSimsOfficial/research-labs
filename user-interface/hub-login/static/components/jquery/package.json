@@ -1,8 +1,8 @@
 {
   "_from": "jquery@^3.5.1",
-  "_id": "jquery@3.6.1",
+  "_id": "jquery@3.6.3",
   "_inBundle": false,
-  "_integrity": "sha512-opJeO4nCucVnsjiXOE+/PcCgYw9Gwpvs/a6B1LL/lQhwWwpbVEVYDZ1FokFr8PRc7ghYlrFPuyHuiiDNTQxmcw==",
+  "_integrity": "sha512-bZ5Sy3YzKo9Fyc8wH2iIQK4JImJ6R0GWI9kL1/k7Z91ZBNgkRXE6U0JfHIizZbort8ZunhSI3jw9I6253ahKfg==",
   "_location": "/jquery",
   "_phantomChildren": {},
   "_requested": {
@@ -18,13 +18,13 @@
   "_requiredBy": [
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/jquery/-/jquery-3.6.1.tgz",
-  "_shasum": "fab0408f8b45fc19f956205773b62b292c147a16",
+  "_resolved": "https://registry.npmjs.org/jquery/-/jquery-3.6.3.tgz",
+  "_shasum": "23ed2ffed8a19e048814f13391a19afcdba160e6",
   "_spec": "jquery@^3.5.1",
   "_where": "/home/runner/work/jupyterhub/jupyterhub",
   "author": {
     "name": "OpenJS Foundation and other contributors",
-    "url": "https://github.com/jquery/jquery/blob/3.6.1/AUTHORS.txt"
+    "url": "https://github.com/jquery/jquery/blob/3.6.3/AUTHORS.txt"
   },
   "bugs": {
     "url": "https://github.com/jquery/jquery/issues"
@@ -69,7 +69,7 @@
     "commitplease": "3.2.0",
     "core-js": "2.6.5",
     "eslint-config-jquery": "3.0.0",
-    "grunt": "1.4.1",
+    "grunt": "1.5.3",
     "grunt-babel": "8.0.0",
     "grunt-cli": "1.4.3",
     "grunt-compare-size": "0.4.2",
@@ -83,7 +83,6 @@
     "grunt-npmcopy": "0.2.0",
     "gzip-js": "0.3.2",
     "husky": "4.2.5",
-    "insight": "0.10.3",
     "jsdom": "19.0.0",
     "karma": "^6.3.17",
     "karma-browserstack-launcher": "1.6.0",
@@ -100,7 +99,7 @@
     "raw-body": "2.3.3",
     "requirejs": "2.3.6",
     "sinon": "2.3.7",
-    "sizzle": "2.3.6",
+    "sizzle": "2.3.9",
     "strip-json-comments": "2.0.1",
     "testswarm": "1.1.2",
     "uglify-js": "3.4.7"
@@ -138,5 +137,5 @@
     "test:slim": "grunt test:prepare && grunt custom:slim && grunt karma:main"
   },
   "title": "jQuery",
-  "version": "3.6.1"
+  "version": "3.6.3"
 }

@@ -54,7 +54,8 @@ def admin_user():
 def pre_spawn_hook(spawner):
     username = spawner.user.name
     subprocess.check_call(['cp', '-TRv', '/etc/jupyter/tutorials-notebooks', '/home/' + username])
-    subprocess.check_call(['chmod', '400', '/home/' + username + '/*'])
+    subprocess.check_call(['chmod', '777', '/home/' + username + '/qiskit-tutorials'])
+    subprocess.check_call(['chmod', '777', '/home/' + username + '/xeus-cpp-tutorials'])
     try:
         pwd.getpwnam(username)
     except KeyError:
