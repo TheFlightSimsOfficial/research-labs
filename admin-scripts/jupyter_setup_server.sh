@@ -248,14 +248,13 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	sudo cp -TRv ~/admin-scripts/user-interface/hub-login/templates /usr/local/share/jupyterhub/templates
 	
 	# Copy jupyter lab theme
-	sudo rm -rf /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-dark-extension
-	sudo rm -rf /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-light-extension
+	echo -e "Installing Jupyter Lab"
+	sudo rmdir --ignore-fail-on-non-empty /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-dark-extension
+	sudo rmdir --ignore-fail-on-non-empty /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-light-extension
 	sudo mkdir /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-dark-extension
 	sudo mkdir /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-light-extension
 	sudo cp -TRv ~/admin-scripts/user-interface/lab/dark /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-dark-extension
 	sudo cp -TRv ~/admin-scripts/user-interface/lab/light /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-light-extension
-	sudo chmod 700 /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-dark-extension
-	sudo chmod 700 /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-light-extension
 	
 	# Copy tutorial notebooks into /etc/jupyter
 	echo -e "Coping tutorial notebooks into global folder..."
