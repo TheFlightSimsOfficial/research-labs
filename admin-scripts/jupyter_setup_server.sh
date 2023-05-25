@@ -63,8 +63,8 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	sudo pip install manimlib pymysql
 
 	# Copy legacy Qiskit and IBM-Q packages
-	sudo cp -TRv ~/admin-scripts/jupyter-external-packages/ibm-q-lab/python310-dist-packages /usr/local/lib/python3.10/dist-packages
-	sudo cp -TRv ~/admin-scripts/jupyter-external-packages/ibm-q-lab/jupyter-lab-ext /usr/local/share/jupyter/labextensions
+	# sudo cp -TRv ~/admin-scripts/jupyter-external-packages/ibm-q-lab/python310-dist-packages /usr/local/lib/python3.10/dist-packages
+	# sudo cp -TRv ~/admin-scripts/jupyter-external-packages/ibm-q-lab/jupyter-lab-ext /usr/local/share/jupyter/labextensions
 
 	# Sudo install PIP packages from database
 	sudo pip install 'altair==4.2.0'
