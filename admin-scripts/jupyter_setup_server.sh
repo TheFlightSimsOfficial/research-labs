@@ -253,7 +253,9 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	sudo mkdir /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-dark-extension
 	sudo mkdir /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-light-extension
 	sudo cp -TRv ~/admin-scripts/user-interface/lab/dark /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-dark-extension
-	sudo cp -TRv ~/admin-scripts/user-interface/lab/light /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-light-extension	
+	sudo cp -TRv ~/admin-scripts/user-interface/lab/light /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-light-extension
+	sudo chmod 700 /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-dark-extension
+	sudo chmod 700 /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-light-extension
 	
 	# Copy tutorial notebooks into /etc/jupyter
 	echo -e "Coping tutorial notebooks into global folder..."
