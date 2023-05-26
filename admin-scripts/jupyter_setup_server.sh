@@ -62,10 +62,6 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	sudo pip install git+https://github.com/qiskit-community/Quantum-Challenge-Grader.git
 	sudo pip install manimlib pymysql
 
-	# Copy legacy Qiskit and IBM-Q packages
-	# sudo cp -TRv ~/admin-scripts/jupyter-external-packages/ibm-q-lab/python310-dist-packages /usr/local/lib/python3.10/dist-packages
-	# sudo cp -TRv ~/admin-scripts/jupyter-external-packages/ibm-q-lab/jupyter-lab-ext /usr/local/share/jupyter/labextensions
-
 	# Sudo install PIP packages from database
 	sudo pip install 'altair==4.2.0'
 	sudo pip install 'aquirdturtle-collapsible-headings==3.1.0'
@@ -237,9 +233,7 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	sudo cp -TRv ~/admin-scripts/user-interface/hub-login/static /usr/local/share/jupyterhub/static
 	sudo cp -TRv ~/admin-scripts/user-interface/hub-login/templates /usr/local/share/jupyterhub/templates
 	
-	echo -e "Install Lab theme" 
-	rmdir --ignore-fail-on-non-empty /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-dark-extension
-	rmdir --ignore-fail-on-non-empty /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-light-extension
+	echo -e "Install Lab theme"
 	sudo rmdir --ignore-fail-on-non-empty /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-dark-extension
 	sudo rmdir --ignore-fail-on-non-empty /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-light-extension
 	sudo mkdir /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-dark-extension
