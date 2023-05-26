@@ -1,6 +1,6 @@
 
 
-![JupyterLab](github.com/TheFlightSims/research-labs/blob/main/logo.png?raw=true)
+![JupyterLab](https://github.com/TheFlightSims/research-labs/blob/main/logo.png?raw=true)
 
 ### Wanring: This project requires validation to complete. DO NOT install it on your system. Use these at your own risk!
 
