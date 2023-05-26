@@ -8,7 +8,7 @@
 
 This repository enables [Windows Subsystem for Linux](https://aka.ms/wsl) capabilities to provide Labs multi-user mode for schools, businesses, or labs.
 
-For better understanding, you can see the [wiki page](github.com/TheFlightSims/research-labs/wiki).
+For better understanding, you can see the [wiki page](https://github.com/TheFlightSims/research-labs/wiki).
 
 # Features
 
@@ -43,11 +43,11 @@ But don't worry, we will finish it as soon as possible
 
 # Installing & Troubleshooting (from source)
 
-See [here](github.com/TheFlightSims/research-labs/wiki) to see them
+See [here](https://github.com/TheFlightSims/research-labs/wiki) to see them
 
 # Installing & Troubleshooting (packaged WSL only)
 
-See [here](github.com/TheFlightSims/research-labs/wiki) to see them
+See [here](https://github.com/TheFlightSims/research-labs/wiki) to see them
 
 # Contributing & Feedback
 
@@ -55,10 +55,10 @@ See [here](github.com/TheFlightSims/research-labs/wiki) to see them
 To fully edit this repository, you can use [Visual Studio Code](https://code.visualstudio.com/), [Notepad++](https://notepad-plus-plus.org/downloads/), or any editor that you want
 
 Otherwise, you can do other ways:
- - [Review Wiki Page](github.com/TheFlightSims/research-labs/wiki)
- - Submit bugs and feature requests in [GitHub](github.com/TheFlightSims/research-labs/issues) or our [Discord server](https://discord.gg/VdbJAHKhuW)
+ - [Review Wiki Page](https://github.com/TheFlightSims/research-labs/wiki)
+ - Submit bugs and feature requests in [GitHub](https://github.com/TheFlightSims/research-labs/issues) or our [Discord server](https://discord.gg/VdbJAHKhuW)
  - [Review source codes]()
- - [Review and commit pull requests](github.com/TheFlightSims/research-labs/pulls)
+ - [Review and commit pull requests](https://github.com/TheFlightSims/research-labs/pulls)
 
 ## Feedback
 To feedback this repository, go to [**feedback**](issues) or **[join our Discord server](https://discord.gg/VdbJAHKhuW)**
