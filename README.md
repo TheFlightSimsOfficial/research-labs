@@ -43,11 +43,11 @@ But don't worry, we will finish it as soon as possible
 
 # Installing & Troubleshooting (from source)
 
-See [here](/wiki) to see them
+See [here](https://github.com/TheFlightSims/wsl-jupyter/wiki) to see them
 
 # Installing & Troubleshooting (packaged WSL only)
 
-See [here](/wiki) to see them
+See [here](https://github.com/TheFlightSims/wsl-jupyter/wiki) to see them
 
 # Contributing & Feedback
 
@@ -55,10 +55,10 @@ See [here](/wiki) to see them
 To fully edit this repository, you can use [Visual Studio Code](https://code.visualstudio.com/), [Notepad++](https://notepad-plus-plus.org/downloads/), or any editor that you want
 
 Otherwise, you can do other ways:
- - [Review Wiki Page](wiki)
- - Submit bugs and feature requests in [GitHub](issues) or our [Discord server](https://discord.gg/VdbJAHKhuW)
+ - [Review Wiki Page](https://github.com/TheFlightSims/wsl-jupyter/wiki)
+ - Submit bugs and feature requests in [GitHub](https://github.com/TheFlightSims/wsl-jupyter/issues) or our [Discord server](https://discord.gg/VdbJAHKhuW)
  - [Review source codes]()
- - [Review and commit pull requests](pulls)
+ - [Review and commit pull requests](https://github.com/TheFlightSims/wsl-jupyter/pulls)
 
 ## Feedback
 To feedback this repository, go to [**feedback**](issues) or **[join our Discord server](https://discord.gg/VdbJAHKhuW)**
