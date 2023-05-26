@@ -1,5 +1,3 @@
-// stylelint-disable selector-list-comma-newline-after, selector-no-qualifying-type
-
 //
 // Typography
 // --------------------------------------------------
@@ -17,7 +15,7 @@ h1, h2, h3, h4, h5, h6,
 
   small,
   .small {
-    font-weight: 400;
+    font-weight: normal;
     line-height: 1;
     color: @headings-small-color;
   }
@@ -64,7 +62,7 @@ p {
 .lead {
   margin-bottom: @line-height-computed;
   font-size: floor((@font-size-base * 1.15));
-  font-weight: 300;
+  font-weight: 200;
   line-height: 1.4;
 
   @media (min-width: @screen-sm-min) {
@@ -76,29 +74,18 @@ p {
 // Emphasis & misc
 // -------------------------
 
-// Ex: (12px small font / 14px base font) * 100% = about 85%
+// Ex: 14px base font * 85% = about 12px
 small,
-.small {
-  font-size: floor((100% * @font-size-small / @font-size-base));
-}
+.small  { font-size: 85%; }
 
-mark,
-.mark {
-  padding: .2em;
-  background-color: @state-warning-bg;
-}
+// Undo browser default styling
+cite    { font-style: normal; }
 
 // Alignment
 .text-left           { text-align: left; }
 .text-right          { text-align: right; }
 .text-center         { text-align: center; }
 .text-justify        { text-align: justify; }
-.text-nowrap         { white-space: nowrap; }
-
-// Transformation
-.text-lowercase      { text-transform: lowercase; }
-.text-uppercase      { text-transform: uppercase; }
-.text-capitalize     { text-transform: capitalize; }
 
 // Contextual colors
 .text-muted {
@@ -154,7 +141,7 @@ mark,
 
 
 // Lists
-// -------------------------
+// --------------------------------------------------
 
 // Unordered and Ordered lists
 ul,
@@ -182,8 +169,8 @@ ol {
 
   > li {
     display: inline-block;
-    padding-right: 5px;
     padding-left: 5px;
+    padding-right: 5px;
   }
 }
 
@@ -197,7 +184,7 @@ dd {
   line-height: @line-height-base;
 }
 dt {
-  font-weight: 700;
+  font-weight: bold;
 }
 dd {
   margin-left: 0; // Undo browser default
@@ -208,39 +195,35 @@ dd {
 // Defaults to being stacked without any of the below styles applied, until the
 // grid breakpoint is reached (default of ~768px).
 
-.dl-horizontal {
-  dd {
-    &:extend(.clearfix all); // Clear the floated `dt` if an empty `dd` is present
-  }
-
-  @media (min-width: @dl-horizontal-breakpoint) {
+@media (min-width: @grid-float-breakpoint) {
+  .dl-horizontal {
     dt {
       float: left;
-      width: (@dl-horizontal-offset - 20);
+      width: (@component-offset-horizontal - 20);
       clear: left;
       text-align: right;
       .text-overflow();
     }
     dd {
-      margin-left: @dl-horizontal-offset;
+      margin-left: @component-offset-horizontal;
+      &:extend(.clearfix all); // Clear the floated `dt` if an empty `dd` is present
     }
   }
 }
 
-
-// Misc
-// -------------------------
+// MISC
+// ----
 
 // Abbreviations and acronyms
-// Add data-* attribute to help out our tooltip plugin, per https://github.com/twbs/bootstrap/issues/5257
 abbr[title],
+// Add data-* attribute to help out our tooltip plugin, per https://github.com/twbs/bootstrap/issues/5257
 abbr[data-original-title] {
   cursor: help;
+  border-bottom: 1px dotted @abbr-border-color;
 }
-
 .initialism {
   font-size: 90%;
-  .text-uppercase();
+  text-transform: uppercase;
 }
 
 // Blockquotes
@@ -269,7 +252,7 @@ blockquote {
     color: @blockquote-small-color;
 
     &:before {
-      content: "\2014 \00A0"; // em dash, nbsp
+      content: '\2014 \00A0'; // em dash, nbsp
     }
   }
 }
@@ -281,19 +264,25 @@ blockquote {
 blockquote.pull-right {
   padding-right: 15px;
   padding-left: 0;
-  text-align: right;
   border-right: 5px solid @blockquote-border-color;
   border-left: 0;
+  text-align: right;
 
   // Account for citation
   footer,
   small,
   .small {
-    &:before { content: ""; }
+    &:before { content: ''; }
     &:after {
-      content: "\00A0 \2014"; // nbsp, em dash
+      content: '\00A0 \2014'; // nbsp, em dash
     }
   }
+}
+
+// Quotes
+blockquote:before,
+blockquote:after {
+  content: "";
 }
 
 // Addresses
