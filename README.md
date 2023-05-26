@@ -5,7 +5,7 @@
 
 This repository enables [Windows Subsystem for Linux](https://aka.ms/wsl) capabilities to provide Labs multi-user mode for schools, businesses, or labs.
 
-For better understanding, you can see the [wiki page](wiki).
+For better understanding, you can see the [wiki page]([wiki](https://github.com/TheFlightSims/wsl-jupyter/wiki)).
 
 # Features
 
