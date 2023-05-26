@@ -183,7 +183,7 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 
 	# Installing kernel
 	sudo apt install -y libxeus-cling0 libxeus1 libxeus6 libxwidgets1 r-cran-irdisplay r-cran-irkernel r-cran-repr ruby-ipynbdiff xcpp xeus-cling-dev xeus-dev xwidgets-dev
-	sudo pip install jupyter-matlab-proxy
+	sudo pip install jupyter-matlab-proxy jlab-enhanced-launcher
 	
 	# Disable legacy features (Notebook, Extension Manager) because of security issues
 	echo -e "Disabling the classic mode"
