@@ -1,6 +1,9 @@
 
 
 ![JupyterLab](https://github.com/TheFlightSims/wsl-jupyter/blob/main/logo.png?raw=true)
+
+### Wanring: This project requires validation to complete. DO NOT install it on your system. Use these at your own risk!
+
 # The Repository
 
 This repository enables [Windows Subsystem for Linux](https://aka.ms/wsl) capabilities to provide Labs multi-user mode for schools, businesses, or labs.
