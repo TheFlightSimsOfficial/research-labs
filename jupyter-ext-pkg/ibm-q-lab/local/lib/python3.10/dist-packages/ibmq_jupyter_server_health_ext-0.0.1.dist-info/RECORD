@@ -1,5 +1,5 @@
-../../../../bin/ibmq-jupyter-server-health-ext,sha256=unDc6ZCku-Y-5OmoRbnY66R0zx-6x8Ioe4v7XOHe8so,241
-../../../../etc/jupyter/jupyter_server_config.d/jupyter_server_health.json,sha256=Dgs2MaB8Wa--r5_VYrhO-6clDHoyoSTaRQ-DgECQ38M,114
+../../../bin/ibmq-jupyter-server-health-ext,sha256=unDc6ZCku-Y-5OmoRbnY66R0zx-6x8Ioe4v7XOHe8so,241
+../../../etc/jupyter/jupyter_server_config.d/jupyter_server_health.json,sha256=Dgs2MaB8Wa--r5_VYrhO-6clDHoyoSTaRQ-DgECQ38M,114
 ibmq_jupyter_server_health_ext-0.0.1.dist-info/INSTALLER,sha256=zuuue4knoyJ-UwPPXg8fezS7VCrXJQrAP7zeNuwvFQg,4
 ibmq_jupyter_server_health_ext-0.0.1.dist-info/METADATA,sha256=DcjJy6J9sjCxt0l3Bqwey8RJFyJebZ8srEi49EMBEsY,6311
 ibmq_jupyter_server_health_ext-0.0.1.dist-info/RECORD,,
