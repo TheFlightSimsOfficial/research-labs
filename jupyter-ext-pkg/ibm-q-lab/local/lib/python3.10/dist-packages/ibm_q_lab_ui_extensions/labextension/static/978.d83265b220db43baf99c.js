@@ -2681,23 +2681,9 @@
                 In = s.n(bn);
             const Nn = (() => ({
                     qiskitImports: [In()`
-    # Importing standard Qiskit libraries
-    from qiskit import QuantumCircuit, transpile
-    from qiskit.tools.jupyter import *
-    from qiskit.visualization import *
-    from ibm_quantum_widgets import *
-    from qiskit_aer import AerSimulator
 
-    # qiskit-ibmq-provider has been deprecated.
-    # Please see the Migration Guides in https://ibm.biz/provider_migration_guide for more detail.
-    from qiskit_ibm_runtime import QiskitRuntimeService, Sampler, Estimator, Session, Options
-
-    # Loading your IBM Quantum account(s)
-    service = QiskitRuntimeService(channel="ibm_quantum")
-
-    # Invoke a primitive inside a session. For more details see https://qiskit.org/documentation/partners/qiskit_ibm_runtime/tutorials.html
-    # with Session(backend=service.backend("ibmq_qasm_simulator")):
-    #     result = Sampler().run(circuits).result()
+    from ibm_quantum_widgets import CircuitComposer
+    CircuitComposer()
   `]
                 }))(),
                 nt = "ibm-q-lab-notebooks-extension";
