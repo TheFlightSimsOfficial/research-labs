@@ -11,7 +11,10 @@ echo
 
 if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	echo -e "Copying IBM-Q, Qiskit and its dependencies..."
-	sudo cp -r ~/admin-scripts/jupyter-external-packages/ibm-q-lab /usr
+	sudo cp -r ~/admin-scripts/jupyter-external-packages/ibm-q-lab/bin /usr
+	sudo cp -r ~/admin-scripts/jupyter-external-packages/ibm-q-lab/etc /usr
+	sudo cp -r ~/admin-scripts/jupyter-external-packages/ibm-q-lab/local /usr
+	sudo cp -r ~/admin-scripts/jupyter-external-packages/ibm-q-lab/share /usr
 	echo -e "Vailidating pip installations..."
     sudo pip check
 else
