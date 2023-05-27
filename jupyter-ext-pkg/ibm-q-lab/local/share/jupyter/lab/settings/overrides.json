@@ -1,11 +1,11 @@
 {
+  "@jupyterlab/apputils-extension:themes": {
+    "theme": "Follow the system theme"
+  },
   "@jupyterlab/extensionmanager-extension:plugin": {
     "disclaimed": true
   },
   "@jupyter-widgets/jupyterlab-manager:plugin": {
     "saveState": true
-  },
-  "@jupyterlab/apputils-extension:notification": {
-    "fetchNews": false
   }
 }
