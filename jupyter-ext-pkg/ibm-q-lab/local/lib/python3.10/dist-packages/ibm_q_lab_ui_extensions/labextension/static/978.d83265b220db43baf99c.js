@@ -2708,66 +2708,6 @@
                         for (const z of k) T.activeCell.model.value.text = z, ft.NotebookActions.insertBelow(T);
                         (await M.sessionContext.session.kernel.info).status === "ok" && (T.activeCellIndex = 0, await ft.NotebookActions.runAndAdvance(T, M.sessionContext))
                     };
-                    c.addCommand(re.createQiskitNotebook, {
-                        label: M => `${M.displayName}`,
-                        caption: () => "Create a new Qiskit notebook",
-                        icon: M => {
-                            if (!M.isPalette) return M.isMenu ? vt : P.notebookIcon
-                        },
-                        execute: M => f(Nn.qiskitImports, M)
-                    }), n.add({
-                        command: re.createQiskitNotebook,
-                        category: "Notebook",
-                        kernelIconUrl: Et,
-                        rank: -2,
-                        args: {
-                            isLauncher: !0,
-                            kernelName: h,
-                            displayName: y
-                        }
-                    }), a.fileMenu.newMenu.addGroup([{
-                        type: "command",
-                        command: re.createQiskitNotebook,
-                        args: {
-                            isMenu: !0,
-                            kernelName: h,
-                            displayName: "Qiskit Notebook"
-                        }
-                    }]), r.addItem({
-                        command: re.createQiskitNotebook,
-                        category: "Qiskit",
-                        args: {
-                            isPalette: !0,
-                            kernelName: h,
-                            displayName: "New Qiskit Notebook"
-                        }
-                    }), c.addCommand(re.openQiskitGettingStarted, {
-                        label: M => `${M.displayName}`,
-                        caption: () => "Open Qiskit getting started notebook",
-                        icon: M => {
-                            if (!M.isPalette) return M.isMenu ? vt : P.notebookIcon
-                        },
-                        execute: M => {
-                            const k = M.kernelName || h;
-                            return c.execute("docmanager:open", {
-                                path: "qiskit-tutorials/qiskit/tutorials/circuits/1_getting_started_with_qiskit.ipynb",
-                                factory: "Notebook",
-                                kernel: {
-                                    name: k
-                                }
-                            }).catch(T => void(0, m.showErrorMessage)("Error", T))
-                        }
-                    }), n.add({
-                        command: re.openQiskitGettingStarted,
-                        category: "Notebook",
-                        kernelIconUrl: Et,
-                        rank: -1,
-                        args: {
-                            isLauncher: !0,
-                            kernelName: h,
-                            displayName: "Getting started with Qiskit"
-                        }
-                    })
                 }
             };
             var Sn = s(45442),
