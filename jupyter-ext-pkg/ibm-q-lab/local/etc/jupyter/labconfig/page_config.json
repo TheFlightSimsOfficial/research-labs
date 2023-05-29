@@ -9,5 +9,5 @@
       "@jupyterlab/filebrowser-extension:share-file": true,
       "@jupyterlab/apputils-extension:splash": true
   },
-  "terminalsAvailable": false
+  "terminalsAvailable": false	
 }
