@@ -728,7 +728,7 @@
             var d = s(56271),
                 i = s.n(d),
                 w = s(2561),
-                N = (o => (o.light = "Light theme", o.dark = "Dark theme", o.system = "Follow the system theme", o))(N || {});
+                N = (o => (o.light = "Quantum Lab light", o.dark = "Quantum Lab dark", o.system = "Quantum Lab system", o))(N || {});
 
             function x() {
                 const {
