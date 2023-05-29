@@ -14,8 +14,6 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	sudo pip install jupyterhub notebook jupyterlab
 	sudo npm update npm
 	sudo npm install
-	sudo apt remove -y python3-terminado python-terminado-doc
-	sudo pip uninstall -y terminado
 	echo "Upgrade completed"
 else
 	echo "Aborted!"

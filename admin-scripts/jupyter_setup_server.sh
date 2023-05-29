@@ -191,9 +191,7 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	sudo jupyter labextension disable @jupyterlab/help-extension:launch-classic
 	sudo jupyter labextension disable @quantum/lab-ui
 
-	# Disable remoting linux terminal
-	sudo apt remove -y python3-terminado python-terminado-doc
-	sudo pip uninstall -y terminado
+	# Auto removal
 	sudo apt autoremove -y
 
 	# Create a service for jupyter
