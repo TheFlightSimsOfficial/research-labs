@@ -12,7 +12,7 @@
 
 PATH=$PATH
 DESC="Multi-user server for Research Labs"
-NAME=rl
+NAME=researchlabs
 DAEMON="/usr/local/bin/jupyterhub"
 DAEMON_ARGS=" -f=/etc/jupyter/config.py"
 PIDFILE=/var/run/$NAME.pid

@@ -183,13 +183,15 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 
 	# Installing kernel
 	sudo apt install -y libxeus-cling0 libxeus1 libxeus6 libxwidgets1 r-cran-irdisplay r-cran-irkernel r-cran-repr ruby-ipynbdiff xcpp xeus-cling-dev xeus-dev xwidgets-dev
-	sudo pip install jupyter-matlab-proxy jlab-enhanced-launcher
+	sudo pip install jupyter-matlab-proxy
+	
+	# Updating the Jupyter componments
+	sudo pip install -r ~/admin-scripts/pip_packages.txt
 	
 	# Disable legacy features (Notebook, Extension Manager) because of security issues
 	echo -e "Disabling the classic mode"
 	sudo jupyter labextension disable @jupyterlab/extensionmanager-extension
 	sudo jupyter labextension disable @jupyterlab/help-extension:launch-classic
-	sudo jupyter labextension disable @quantum/lab-ui
 
 	# Auto removal
 	sudo apt autoremove -y
@@ -256,6 +258,8 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	echo -e "Vailidating pip installations..."
     sudo pip check
 	
+	# Security in folder /etc/jupyter
+	sudo chmod 700 /etc/jupyter
 	
 	echo -e "\nInstalled Jupyter Lab for multiple users!"
 else

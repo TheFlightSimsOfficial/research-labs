@@ -10,7 +10,7 @@ echo
 
 if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	sudo apt update && sudo apt full-upgrade -y
-	sudo pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 sudo pip install
+	sudo pip install -r ~/admin-scripts/pip_packages.txt
 	sudo pip install jupyterhub notebook jupyterlab
 	sudo npm update npm
 	sudo npm install
