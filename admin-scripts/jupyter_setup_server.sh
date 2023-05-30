@@ -273,7 +273,7 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	echo -e "Coping tutorial notebooks into global folder..."
 	sudo mkdir /etc/jupyter/tutorials-notebooks
 	sudo cp -TRv ~/admin-scripts/tutorials-notebooks /etc/jupyter/tutorials-notebooks
-	sudo chmod +rwxrxrx /etc/jupyter/tutorials-notebooks
+	sudo chmod 740 /etc/jupyter/tutorials-notebooks
 	
 	# Security in folder /etc/jupyter
 	sudo chmod 700 /etc/jupyter
