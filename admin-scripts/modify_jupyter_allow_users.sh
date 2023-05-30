@@ -1,3 +1,3 @@
 #!/bin/bash
-sudo chmod +rwx /etc/jupyter/allow_users.txt
+sudo chmod 700 /etc/jupyter/allow_users.txt
 sudo nano /etc/jupyter/allow_users.txt
