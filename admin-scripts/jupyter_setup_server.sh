@@ -113,7 +113,6 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	sudo pip install 'jlab-enhanced-cell-toolbar==3.5.1'
 	sudo pip install 'jsonpointer==2.3'
 	sudo pip install 'jupyter-archive==3.3.4'
-	sudo pip install 'jupyter-matlab-proxy==0.5.4'
 	sudo pip install 'jupyter-resource-usage==0.7.2'
 	sudo pip install 'jupyter-server-terminals==0.4.4'
 	sudo pip install 'jupyterhub-nativeauthenticator==1.2.0'
@@ -214,7 +213,7 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	
 	# Installing kernel
 	sudo apt install -y libxeus-cling0 libxeus1 libxeus6 libxwidgets1 r-cran-irdisplay r-cran-irkernel r-cran-repr ruby-ipynbdiff xcpp xeus-cling-dev xeus-dev xwidgets-dev
-	sudo pip install jupyter-matlab-proxy
+	sudo pip install matlab_kernel
 	
 	# Disable legacy features (Notebook, Extension Manager) because of security issues
 	echo -e "Disabling the classic mode"
