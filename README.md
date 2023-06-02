@@ -2,9 +2,6 @@
   <img src="https://github.com/TheFlightSims/research-labs/blob/main/banner.png?raw=true" />
 </p>
 
-
-### Wanring: This project requires validation to complete. DO NOT install it on your system. Use these at your own risk!
-
 # The Repository
 
 This repository enables [Windows Subsystem for Linux](https://aka.ms/wsl) capabilities to provide Labs multi-user mode for schools, businesses, or labs.
