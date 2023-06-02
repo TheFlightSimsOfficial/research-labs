@@ -45,8 +45,8 @@ Otherwise, you can do other ways:
 ## Feedback
 To feedback this repository, go to [**feedback**](issues) or **[join our Discord server](https://discord.gg/VdbJAHKhuW)**
 
-# License & Original Contributors
-## License 
+# License 
+
 This repo uses [**GNU GPL 3.0**](https://www.gnu.org/licenses/gpl-3.0.en.html) and [**MIT License**](https://opensource.org/licenses/MIT) for all contributors to have free, no limit to 
 - Use (for both private and commercial uses)
 - Modify (including edit the source files and compile/decompile) 
