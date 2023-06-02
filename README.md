@@ -1,6 +1,7 @@
+<p align="center">
+  <img src="https://github.com/TheFlightSims/research-labs/blob/main/banner.png?raw=true" />
+</p>
 
-
-![JupyterLab](https://github.com/TheFlightSims/research-labs/blob/main/logo.png?raw=true)
 
 ### Wanring: This project requires validation to complete. DO NOT install it on your system. Use these at your own risk!
 
@@ -12,19 +13,7 @@ For better understanding, you can see the [wiki page](https://github.com/TheFlig
 
 # Features
 
-## Frontend
-
-### Hub Login
-
-
-
-## Backend
-
-# Download the WSL package
-
-Sorry, the tar.gz version is not available right now. 
-
-But don't worry, we will finish it as soon as possible
+See more at [wiki](https://github.com/TheFlightSims/research-labs/wiki/Getting-started)
 
 # Requirements & Recommendations
 
@@ -41,13 +30,9 @@ But don't worry, we will finish it as soon as possible
 | Requirement | RAM | 16Gib of physical + 10Gib of Dynamic = 26Gib total commit
 | **Recommendation** | **RAM** | **64Gib of physical + 32Gib of Dynamic = 96Gib total commit**
 
-# Installing & Troubleshooting (from source)
+# Installing & Troubleshooting
 
-See [here](https://github.com/TheFlightSims/research-labs/wiki) to see them
-
-# Installing & Troubleshooting (packaged WSL only)
-
-See [here](https://github.com/TheFlightSims/research-labs/wiki) to see them
+Check out the [wiki](https://github.com/TheFlightSims/research-labs/wiki/Getting-started#installing--troubleshooting)
 
 # Contributing & Feedback
 
@@ -69,7 +54,3 @@ This repo uses [**GNU GPL 3.0**](https://www.gnu.org/licenses/gpl-3.0.en.html) a
 - Use (for both private and commercial uses)
 - Modify (including edit the source files and compile/decompile) 
 - Distribution without permission directly from TheFlightSims, except emergency revokes permission. In that case, this repo will be moved to private and cannot be accessed by the public.
-
-## Original Contributors
-|Usage|Name|Contributors|Original path|
-|--|--|--|--|
