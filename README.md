@@ -29,7 +29,11 @@ See more at [wiki](https://github.com/TheFlightSims/research-labs/wiki/Getting-s
 
 # Installing & Troubleshooting
 
-Check out the [wiki](https://github.com/TheFlightSims/research-labs/wiki/Getting-started#installing--troubleshooting)
+Check out the [wiki](https://github.com/TheFlightSims/research-labs/wiki/Getting-started#installing--troubleshooting) if you want to install from source
+
+Or, install from the final WSL distro (tar.gz) from [Google Drive](https://drive.google.com/file/d/1nRw_D8JOg9GDlm8mjocgzFO4ejyTVLcf/view?usp=sharing), [Mediafire](https://www.mediafire.com/file/ubnk8z0qb6pe11i/researchlabs-beta.7z/file), [Modsfire](https://modsfire.com/G1o4CDn7F5sXH7k), or [Hitfire.net](https://hitf.cc/PSljpUT)
+
+ > Note: final WSL distro is the stable version, different from the being-developed version on GitHub. Consider seeing the guides that help you to upgrade to the version you want in Release.
 
 # Contributing & Feedback
 
