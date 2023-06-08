@@ -10,6 +10,7 @@ echo
 
 if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	sudo apt update && sudo apt full-upgrade -y
+	sudo apt install libgirepository1.0-dev
 	sudo pip install -r ~/admin-scripts/pip_packages.txt
 	sudo pip install jupyterhub notebook jupyterlab
 	sudo npm update npm

@@ -81,17 +81,17 @@ c.ConfigurableHTTPProxy.auth_token = '/etc/jupyter/proxy_auth_token'
 c.PAMAuthenticator.admin_groups = {'administrators'}
 
 c.JupyterHub.authenticator_class = 'nativeauthenticator.NativeAuthenticator'
-c.JupyterHub.api_page_default_limit = 5
+c.JupyterHub.api_page_default_limit = 3
 c.JupyterHub.cookie_secret_file = '/etc/jupyter/jupyterhub_cookie_secret'
 c.JupyterHub.db_url = mysql_connect_string()
 c.JupyterHub.debug_db = True
 c.JupyterHub.reset_db = False
-c.JupyterHub.init_spawners_timeout = 30
+c.JupyterHub.init_spawners_timeout = 60
 c.JupyterHub.terminals_enabled = False
 
 c.NotebookApp.terminals_enabled = False
 
 c.Spawner.cpu_limit = 1
-c.Spawner.mem_limit = '512M'
+c.Spawner.mem_limit = '1024M'
 c.Spawner.pre_spawn_hook = pre_spawn_hook
 c.Spawner.default_url = '/lab'
