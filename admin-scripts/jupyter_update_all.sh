@@ -12,7 +12,10 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	sudo apt update && sudo apt full-upgrade -y
 	sudo apt install libgirepository1.0-dev
 	sudo pip install -r ~/admin-scripts/pip_packages.txt
-	sudo pip install jupyterhub notebook jupyterlab
+	sudo pip install jupyter-c-kernel
+	sudo install_c_kernel
+	sudo cp -r ~/admin-scripts/jupyter-external-packages/c-kernel /usr
+	sudo cp -r ~/admin-scripts/jupyter-external-packages/qiskit-kernel/local /usr
 	sudo npm update npm
 	sudo npm install
 	echo "Upgrade completed"
