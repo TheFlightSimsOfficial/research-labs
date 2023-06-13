@@ -14,7 +14,7 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	sudo pip install -r ~/admin-scripts/pip_packages.txt
 	sudo pip install jupyter-c-kernel
 	sudo install_c_kernel
-	sudo cp -r ~/admin-scripts/jupyter-external-packages/c-kernel /usr
+	sudo cp -r ~/admin-scripts/jupyter-external-packages/c-kernel/share /usr
 	sudo cp -r ~/admin-scripts/jupyter-external-packages/qiskit-kernel/local /usr
 	sudo npm update npm
 	sudo npm install

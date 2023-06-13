@@ -223,7 +223,7 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	sudo pip install matlab_kernel
 	sudo pip install jupyter-c-kernel
 	sudo install_c_kernel
-	sudo cp -r ~/admin-scripts/jupyter-external-packages/c-kernel /usr
+	sudo cp -r ~/admin-scripts/jupyter-external-packages/c-kernel/share /usr
 	sudo cp -r ~/admin-scripts/jupyter-external-packages/qiskit-kernel/local /usr
 	
 	# Disable legacy features (Notebook, Extension Manager) because of security issues
