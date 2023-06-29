@@ -1,6 +1,6 @@
 {
   "name": "@quantum/lab-widgets",
-  "version": "4.0.26",
+  "version": "4.0.28",
   "description": "IBM Quantum widgets for Jupyter",
   "private": true,
   "keywords": [
@@ -90,7 +90,7 @@
       }
     },
     "_build": {
-      "load": "static/remoteEntry.5eef7fda239bcaa90c59.js",
+      "load": "static/remoteEntry.53df12d34789a1beee73.js",
       "extension": "./extension"
     }
   }

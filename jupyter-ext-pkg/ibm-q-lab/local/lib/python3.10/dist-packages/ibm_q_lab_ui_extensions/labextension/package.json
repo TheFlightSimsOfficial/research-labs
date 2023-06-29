@@ -1,6 +1,6 @@
 {
   "name": "@quantum/lab-ui",
-  "version": "4.0.26",
+  "version": "4.0.28",
   "description": "Quantum lab jupyter extensions",
   "private": true,
   "keywords": [
@@ -126,7 +126,7 @@
     "outputDir": "python/ibm_q_lab_ui_extensions/labextension",
     "sharedPackages": {},
     "_build": {
-      "load": "static/remoteEntry.812b552e18677d353802.js",
+      "load": "static/remoteEntry.3d55cbbb6abbe8f29142.js",
       "extension": "./extension",
       "style": "./style"
     }

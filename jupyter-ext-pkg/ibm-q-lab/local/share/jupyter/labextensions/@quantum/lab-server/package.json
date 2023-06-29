@@ -1,6 +1,6 @@
 {
   "name": "@quantum/lab-server",
-  "version": "4.0.26",
+  "version": "4.0.28",
   "description": "Server handlers",
   "keywords": [
     "jupyter",
@@ -72,7 +72,7 @@
     "extension": true,
     "outputDir": "python/ibm_q_lab_server_extension/labextension",
     "_build": {
-      "load": "static/remoteEntry.bf859c996b9b0597482b.js",
+      "load": "static/remoteEntry.871a75001a3d57b3df97.js",
       "extension": "./extension",
       "style": "./style"
     }
