@@ -56,6 +56,7 @@ jupyterlab-image-editor==0.1.0
 jupyterlab-katex==3.4.0
 jupyterlab-kernelspy==3.1.0
 jupyterlab-language-pack-de-de==4.0.post0
+jupyterlab-language-pack-es-es==4.0.post0
 jupyterlab-language-pack-fr-fr==4.0.post0
 jupyterlab-language-pack-ja-jp==4.0.post0
 jupyterlab-language-pack-ru-ru==4.0.post0
@@ -96,6 +97,7 @@ nxpd==0.2.0
 onnxruntime==1.15.1
 openpyxl==3.1.2
 papermill==2.4.0
+pip==23.1.2
 pip-chill==1.0.3
 pipdeptree==2.9.3
 pkgutil-resolve-name==1.3.10
@@ -139,5 +141,318 @@ unattended-upgrades==0.1
 unicodedata2==15.0.0
 uri-template==1.3.0
 voila==0.5.0a4
+wadllib==1.3.6
 webcolors==1.13
 xlrd==2.0.1
+# aiofile==3.8.7 # Installed as dependency for azure-quantum
+# aiofiles==22.1.0 # Installed as dependency for ypy-websocket
+# aiohttp==3.8.4 # Installed as dependency for aiohttp-session, azure-quantum, jupyter-server-proxy, matlab-proxy
+# aiohttp-session==2.12.0 # Installed as dependency for matlab-proxy
+# aiosignal==1.3.1 # Installed as dependency for aiohttp
+# aiosqlite==0.19.0 # Installed as dependency for ypy-websocket
+# alembic==1.11.1 # Installed as dependency for jupyterhub
+# amazon-braket-default-simulator==1.16.0 # Installed as dependency for amazon-braket-sdk
+# amazon-braket-schemas==1.18.0 # Installed as dependency for amazon-braket-default-simulator, amazon-braket-sdk
+# amazon-braket-sdk==1.46.0 # Installed as dependency for qiskit-braket-provider
+# ansi2html==1.8.0 # Installed as dependency for dash
+# ansiwrap==0.8.4 # Installed as dependency for papermill
+# antlr4-python3-runtime==4.9.2 # Installed as dependency for amazon-braket-default-simulator, openpulse
+# anyio==3.7.0 # Installed as dependency for jupyter-server
+# appdirs==1.4.4 # Installed as dependency for yfinance
+# argon2-cffi==21.3.0 # Installed as dependency for jupyter-server, nbclassic, notebook
+# argon2-cffi-bindings==21.2.0 # Installed as dependency for argon2-cffi
+# argparse==1.4.0 # Installed as dependency for manimlib
+# args==0.1.0 # Installed as dependency for clint
+# arrow==1.2.3 # Installed as dependency for isoduration
+# asteval==0.9.30 # Installed as dependency for lmfit
+# asttokens==2.2.1 # Installed as dependency for stack-data
+# async-generator==1.10 # Installed as dependency for jupyterhub
+# async-timeout==4.0.2 # Installed as dependency for aiohttp
+# attrs==23.1.0 # Installed as dependency for aiohttp, jsonschema
+# azure-core==1.27.1 # Installed as dependency for azure-identity, azure-quantum, azure-storage-blob, msrest
+# azure-identity==1.13.0 # Installed as dependency for azure-quantum
+# azure-storage-blob==12.16.0 # Installed as dependency for azure-quantum
+# babel==2.12.1 # Installed as dependency for jupyterlab-server
+# backcall==0.2.0 # Installed as dependency for ipython
+# backoff==2.2.1 # Installed as dependency for amazon-braket-sdk
+# bcrypt==4.0.1 # Installed as dependency for jupyterhub-nativeauthenticator
+# beautifulsoup4==4.12.2 # Installed as dependency for nbconvert, yfinance
+# bleach==6.0.0 # Installed as dependency for nbconvert
+# blosc2==2.0.0 # Installed as dependency for tables
+# boltons==23.0.0 # Installed as dependency for amazon-braket-sdk
+# boto3==1.26.164 # Installed as dependency for amazon-braket-sdk
+# botocore==1.29.164 # Installed as dependency for boto3, s3transfer
+# caio==0.9.12 # Installed as dependency for aiofile
+# certifi==2023.5.7 # Installed as dependency for msrest, qiskit-braket-provider, qiskit-finance, requests
+# certipy==0.1.3 # Installed as dependency for jupyterhub
+# cffi==1.15.1 # Installed as dependency for argon2-cffi-bindings, brotlipy, cryptography
+# charset-normalizer==3.1.0 # Installed as dependency for aiohttp, requests
+# click==8.1.3 # Installed as dependency for dask, distributed, flask, papermill
+# clint==0.5.1 # Installed as dependency for mamba
+# cloudpickle==2.2.1 # Installed as dependency for dask, distributed
+# colorama==0.4.6 # Installed as dependency for conan, nbdime
+# colorcet==3.0.1 # Installed as dependency for kaleidoscope
+# coloredlogs==15.0.1 # Installed as dependency for onnxruntime
+# colour==0.1.5 # Installed as dependency for manimlib
+# comm==0.1.3 # Installed as dependency for ipykernel, jupytercad, ypywidgets
+# contourpy==1.1.0 # Installed as dependency for bokeh, matplotlib
+# coverage==7.2.7 # Installed as dependency for mamba
+# cryptography==41.0.1 # Installed as dependency for azure-identity, azure-storage-blob, msal, pyopenssl, pyspnego, requests-ntlm, secretstorage
+# cycler==0.11.0 # Installed as dependency for matplotlib
+# cython==0.29.35 # Installed as dependency for mthree, tables
+# dash==2.11.1 # Installed as dependency for jupyterlab-dash
+# dash-core-components==2.0.0 # Installed as dependency for dash
+# dash-html-components==2.0.0 # Installed as dependency for dash
+# dash-table==5.0.0 # Installed as dependency for dash
+# dask==2023.6.1 # Installed as dependency for distributed
+# debugpy==1.6.7 # Installed as dependency for ipykernel
+# decorator==5.1.1 # Installed as dependency for ipython, qiskit-ionq, retry
+# defusedxml==0.7.1 # Installed as dependency for nbconvert
+# deprecated==1.2.14 # Installed as dependency for azure-quantum
+# dill==0.3.6 # Installed as dependency for qiskit-machine-learning, qiskit-terra
+# distro==1.8.0 # Installed as dependency for conan, scikit-build, ssh-import-id
+# docplex==2.25.236 # Installed as dependency for qiskit-optimization
+# ecos==2.0.12 # Installed as dependency for cvxpy
+# entrypoints==0.4 # Installed as dependency for jupyterlab-pullrequests, papermill
+# et-xmlfile==1.1.0 # Installed as dependency for openpyxl
+# exceptiongroup==1.1.1 # Installed as dependency for anyio
+# executing==1.2.0 # Installed as dependency for stack-data
+# fastdtw==0.3.4 # Installed as dependency for qiskit-finance, qiskit-machine-learning
+# fasteners==0.18 # Installed as dependency for conan
+# fastjsonschema==2.17.1 # Installed as dependency for nbformat
+# flask==2.2.5 # Installed as dependency for dash
+# flatbuffers==23.5.26 # Installed as dependency for onnxruntime
+# fonttools==4.40.0 # Installed as dependency for matplotlib
+# frozendict==2.3.8 # Installed as dependency for yfinance
+# frozenlist==1.3.3 # Installed as dependency for aiohttp, aiosignal
+# fsspec==2023.6.0 # Installed as dependency for dask
+# future==0.18.3 # Installed as dependency for uncertainties
+# gitdb==4.0.10 # Installed as dependency for gitpython
+# gitpython==3.1.31 # Installed as dependency for jupyterlab-autoversion, nbdime
+# greenlet==2.0.2 # Installed as dependency for sqlalchemy
+# h5py==3.9.0 # Installed as dependency for pyscf, qiskit-nature
+# html5lib==1.1 # Installed as dependency for yfinance
+# httplib2==0.20.2 # Installed as dependency for launchpadlib, lazr.restfulclient
+# humanfriendly==10.0 # Installed as dependency for coloredlogs
+# ibm-cloud-sdk-core==3.16.7 # Installed as dependency for ibm-platform-services
+# ibm-platform-services==0.37.0 # Installed as dependency for qiskit-ibm-runtime
+# idna==3.4 # Installed as dependency for anyio, requests, yarl
+# imageio==2.31.1 # Installed as dependency for scikit-image
+# importlib-metadata==6.7.0 # Installed as dependency for dask, keyring, qiskit-ionq
+# inflection==0.5.1 # Installed as dependency for nasdaq-data-link
+# ipycytoscape==1.3.3 # Installed as dependency for qc-grader
+# ipykernel==6.23.3 # Installed as dependency for ipywidgets, jupyter, jupyter-console, metakernel, nbclassic, notebook, qtconsole
+# ipython==8.14.0 # Installed as dependency for ipykernel, ipympl, ipywidgets, jupyter-console, jupyterlab, lrcurve, matlab-kernel
+# ipython-genutils==0.2.0 # Installed as dependency for ipympl, jupyter-contrib-nbextensions, nbclassic, notebook, qtconsole
+# ipywidgets==8.0.6 # Installed as dependency for ibm-quantum-widgets, ipycytoscape, ipympl, ipysheet, jupyter
+# isodate==0.6.1 # Installed as dependency for azure-storage-blob, msrest
+# itsdangerous==2.1.2 # Installed as dependency for flask
+# jaraco.classes==3.2.3 # Installed as dependency for keyring
+# jedi==0.18.2 # Installed as dependency for ipython, metakernel
+# jeepney==0.8.0 # Installed as dependency for keyring, secretstorage
+# jinja2==3.1.2 # Installed as dependency for altair, bokeh, conan, distributed, flask, jupyter-server, jupyterhub, jupyterlab, jupyterlab-server, nbclassic, nbconvert, nbdime, notebook
+# jmespath==1.0.1 # Installed as dependency for boto3, botocore
+# joblib==1.3.1 # Installed as dependency for scikit-learn
+# json5==0.9.14 # Installed as dependency for jupyterlab-server
+# jsonpickle==3.0.1 # Installed as dependency for qc-grader
+# jsonschema==4.17.3 # Installed as dependency for altair, jupyter-events, jupyter-telemetry, jupyterlab-server, nbformat
+# jupyter==1.0.0 # Installed as dependency for kaleidoscope
+# jupyter-client==8.3.0 # Installed as dependency for ipykernel, jupyter-console, jupyter-server, matlab-kernel, nbclassic, nbclient, notebook, qtconsole, voila
+# jupyter-console==6.6.3 # Installed as dependency for jupyter
+# jupyter-contrib-core==0.4.2 # Installed as dependency for jupyter-contrib-nbextensions, jupyter-nbextensions-configurator
+# jupyter-core==5.3.1 # Installed as dependency for ipykernel, jupyter-client, jupyter-console, jupyter-contrib-core, jupyter-contrib-nbextensions, jupyter-nbextensions-configurator, jupyter-server, jupyterlab, metakernel, nbclassic, nbclient, nbconvert, nbformat, notebook, qtconsole, voila
+# jupyter-events==0.6.3 # Installed as dependency for jupyter-server, jupyter-server-fileid
+# jupyter-highlight-selected-word==0.2.0 # Installed as dependency for jupyter-contrib-nbextensions
+# jupyter-lsp==2.2.0 # Installed as dependency for jupyterlab-lsp
+# jupyter-nbextensions-configurator==0.6.3 # Installed as dependency for jupyter-contrib-nbextensions
+# jupyter-server==2.7.0 # Installed as dependency for ibmq-jupyter-server-health-ext, jupyter-archive, jupyter-lsp, jupyter-resource-usage, jupyter-server-fileid, jupyter-server-mathjax, jupyter-server-proxy, jupytercad, jupyterlab, jupyterlab-code-formatter, jupyterlab-execute-time, jupyterlab-git, jupyterlab-limit-output, jupyterlab-link-share, jupyterlab-pyflyby, jupyterlab-server, nbclassic, nbdime, nbgitpuller, notebook-shim, voila
+# jupyter-server-fileid==0.9.0 # Installed as dependency for jupyter-server-ydoc
+# jupyter-server-mathjax==0.2.6 # Installed as dependency for nbdime
+# jupyter-server-proxy==4.0.0 # Installed as dependency for jupyterlab-dash
+# jupyter-server-terminals==0.4.4 # Installed as dependency for jupyter-server
+# jupyter-server-ydoc==0.8.0 # Installed as dependency for jupyterlab
+# jupyter-telemetry==0.1.0 # Installed as dependency for jupyterhub
+# jupyter-ydoc==0.2.4 # Installed as dependency for jupyter-server-ydoc, jupyterlab
+# jupyterhub==4.0.1 # Installed as dependency for jupyterhub-nativeauthenticator
+# jupyterlab==3.6.5 # Installed as dependency for aquirdturtle-collapsible-headings, ibm-q-lab-server-extension, ibm-q-lab-ui-extensions, jupytercad, jupyterlab-autoversion, jupyterlab-drawio, jupyterlab-lsp, jupyterlab-markup, jupyterlab-pullrequests, jupyterlab-spreadsheet-editor, jupyterlab-tour, lckr-jupyterlab-variableinspector, scriptedforms
+# jupyterlab-git==0.39.3 # Installed as dependency for jupyterlab-pullrequests
+# jupyterlab-pygments==0.2.2 # Installed as dependency for nbconvert
+# jupyterlab-server==2.23.0 # Installed as dependency for jupyterlab, voila
+# jupyterlab-widgets==3.0.7 # Installed as dependency for ipywidgets
+# jupyterplot==0.0.3 # Installed as dependency for qc-grader
+# kiwisolver==1.4.4 # Installed as dependency for matplotlib
+# lazr.restfulclient==0.14.4 # Installed as dependency for launchpadlib
+# lazr.uri==1.0.6 # Installed as dependency for launchpadlib
+# lazy-loader==0.2 # Installed as dependency for scikit-image
+# llvmlite==0.40.1 # Installed as dependency for numba
+# lmfit==1.2.1 # Installed as dependency for qiskit-experiments
+# locket==1.0.0 # Installed as dependency for distributed, partd
+# lrcurve==1.1.0 # Installed as dependency for jupyterplot
+# lxml==4.9.2 # Installed as dependency for jupyter-contrib-nbextensions, yfinance
+# mako==1.2.4 # Installed as dependency for alembic
+# markdown==3.4.3 # Installed as dependency for azure-quantum, python-markdown-math
+# markdown-it-py==3.0.0 # Installed as dependency for rich
+# markupsafe==2.1.3 # Installed as dependency for jinja2, mako, nbconvert, werkzeug
+# matplotlib==3.7.1 # Installed as dependency for ipympl, jupyterplot, kaleidoscope, qiskit-dynamics, qiskit-experiments, scriptedforms, seaborn
+# matplotlib-inline==0.1.6 # Installed as dependency for ipykernel, ipython
+# mdurl==0.1.2 # Installed as dependency for markdown-it-py
+# metakernel==0.29.4 # Installed as dependency for matlab-kernel
+# mistune==3.0.1 # Installed as dependency for nbconvert
+# more-itertools==9.1.0 # Installed as dependency for jaraco.classes, nasdaq-data-link
+# mpmath==1.3.0 # Installed as dependency for sympy
+# msal==1.22.0 # Installed as dependency for azure-identity, msal-extensions
+# msal-extensions==1.0.0 # Installed as dependency for azure-identity
+# msgpack==1.0.5 # Installed as dependency for blosc2, distributed
+# msrest==0.7.1 # Installed as dependency for azure-quantum
+# multidict==6.0.4 # Installed as dependency for aiohttp, yarl
+# multiset==3.0.1 # Installed as dependency for qiskit-dynamics
+# multitasking==0.0.11 # Installed as dependency for yfinance
+# mypy-extensions==1.0.0 # Installed as dependency for oqpy
+# nasdaq-data-link==1.0.4 # Installed as dependency for qiskit-finance
+# nbclassic==1.0.0 # Installed as dependency for jupyterlab, notebook
+# nbclient==0.7.4 # Installed as dependency for nbconvert, papermill, voila
+# nbconvert==7.6.0 # Installed as dependency for jupyter, jupyter-contrib-nbextensions, jupyter-server, nbclassic, notebook, voila
+# nbdime==3.2.1 # Installed as dependency for jupyterlab-git
+# nbformat==5.9.0 # Installed as dependency for jupyter-server, jupyterlab-git, nbclassic, nbclient, nbconvert, nbdime, notebook, papermill
+# nest-asyncio==1.5.6 # Installed as dependency for amazon-braket-sdk, dash, ipykernel, nbclassic, notebook
+# networkx==3.1 # Installed as dependency for amazon-braket-sdk, nxpd, qc-grader, qiskit-optimization, scikit-image
+# notebook==6.5.4 # Installed as dependency for jupyter, jupyter-contrib-core, jupyter-contrib-nbextensions, jupyter-nbextensions-configurator, jupyterlab, nbgitpuller, scriptedforms
+# notebook-shim==0.2.3 # Installed as dependency for nbclassic
+# ntlm-auth==1.5.0 # Installed as dependency for requests-ntlm
+# numba==0.57.1 # Installed as dependency for kaleidoscope
+# numexpr==2.8.4 # Installed as dependency for tables
+# numpy==1.23.5 # Installed as dependency for altair, amazon-braket-default-simulator, amazon-braket-sdk, azure-quantum, bokeh, bottleneck, contourpy, cvxpy, ecos, fastdtw, h5py, imagecodecs, imageio, ipympl, iqm-client, jupyterplot, kaleidoscope, lmfit, manimlib, matplotlib, mthree, nasdaq-data-link, numba, numexpr, onnxruntime, opencv-python, opt-einsum, oqpy, osqp, pandas, patsy, pyscf, pywavelets, qc-grader, qdldl, qiskit-aer, qiskit-braket-provider, qiskit-dynamics, qiskit-experiments, qiskit-finance, qiskit-ibm-experiment, qiskit-ibm-provider, qiskit-ibm-runtime, qiskit-ibmq-provider, qiskit-machine-learning, qiskit-nature, qiskit-optimization, qiskit-terra, rustworkx, scikit-image, scikit-learn, scipy, scriptedforms, scs, seaborn, statsmodels, tables, tifffile, yfinance
+# oauthlib==3.2.2 # Installed as dependency for jupyterhub, requests-oauthlib
+# onetimepass==1.0.1 # Installed as dependency for jupyterhub-nativeauthenticator
+# opencv-python==4.7.0.72 # Installed as dependency for manimlib
+# openpulse==0.4.2 # Installed as dependency for amazon-braket-sdk, oqpy
+# openqasm3==0.4.0 # Installed as dependency for amazon-braket-sdk, openpulse, qiskit-qasm3-import
+# opt-einsum==3.3.0 # Installed as dependency for amazon-braket-default-simulator
+# oqpy==0.1.2 # Installed as dependency for amazon-braket-sdk
+# orjson==3.9.1 # Installed as dependency for mthree
+# osqp==0.6.3 # Installed as dependency for cvxpy
+# overrides==7.3.1 # Installed as dependency for jupyter-server
+# packaging==23.1 # Installed as dependency for bokeh, dask, distributed, ipykernel, jupyter-server, jupyterhub, jupyterlab, jupyterlab-code-formatter, jupyterlab-git, jupyterlab-server, matplotlib, nbconvert, onnxruntime, plotly, qtconsole, qtpy, scikit-build, scikit-image, statsmodels, tables
+# pamela==1.1.0 # Installed as dependency for jupyterhub
+# pandas==2.0.3 # Installed as dependency for altair, bokeh, nasdaq-data-link, qiskit-finance, qiskit-ibm-experiment, scriptedforms, seaborn, statsmodels, yfinance
+# pandocfilters==1.5.0 # Installed as dependency for nbconvert
+# param==1.13.0 # Installed as dependency for pyct
+# parso==0.8.3 # Installed as dependency for jedi
+# partd==1.4.0 # Installed as dependency for dask
+# patch-ng==1.17.4 # Installed as dependency for conan
+# patsy==0.5.3 # Installed as dependency for statsmodels
+# pbr==5.11.1 # Installed as dependency for stevedore
+# pexpect==4.8.0 # Installed as dependency for ipython, jupyterlab-git, metakernel
+# pickleshare==0.7.5 # Installed as dependency for ipython
+# pillow==9.5.0 # Installed as dependency for bokeh, imageio, ipympl, manimlib, matplotlib, scikit-image
+# platformdirs==3.8.0 # Installed as dependency for jupyter-core
+# plotly==5.15.0 # Installed as dependency for dash, kaleidoscope, qc-grader
+# ply==3.11 # Installed as dependency for qiskit-terra
+# portalocker==2.7.0 # Installed as dependency for msal-extensions
+# progressbar==2.5 # Installed as dependency for manimlib
+# prometheus-client==0.17.0 # Installed as dependency for jupyter-resource-usage, jupyter-server, jupyterhub, nbclassic, notebook
+# prompt-toolkit==3.0.38 # Installed as dependency for ipython, jupyter-console
+# protobuf==3.20.3 # Installed as dependency for azure-quantum, onnxruntime
+# psutil==5.9.5 # Installed as dependency for distributed, ipykernel, jupyter-resource-usage, matlab-proxy, mthree, qiskit-finance, qiskit-machine-learning, qiskit-nature, qiskit-terra, system-info
+# ptyprocess==0.7.0 # Installed as dependency for pexpect, terminado
+# pure-eval==0.2.2 # Installed as dependency for stack-data
+# py==1.11.0 # Installed as dependency for retry
+# py-cpuinfo==9.0.0 # Installed as dependency for system-info, tables
+# pycairo==1.24.0 # Installed as dependency for manimlib, pygobject
+# pycodestyle==2.10.0 # Installed as dependency for autopep8
+# pycparser==2.21 # Installed as dependency for cffi
+# pyct==0.5.0 # Installed as dependency for colorcet
+# pydantic==1.10.9 # Installed as dependency for amazon-braket-default-simulator, amazon-braket-schemas, iqm-client, jupytercad
+# pydub==0.25.1 # Installed as dependency for manimlib
+# pyflyby==1.8.4 # Installed as dependency for jupyterlab-pyflyby
+# pygments==2.15.1 # Installed as dependency for ipython, jupyter-console, manimlib, nbconvert, nbdime, qtconsole, rich
+# pyjwt==2.7.0 # Installed as dependency for ibm-cloud-sdk-core, msal
+# pyopenssl==23.2.0 # Installed as dependency for certipy
+# pyparsing==2.4.7 # Installed as dependency for httplib2, matplotlib, nxpd, pydot
+# pyqir==0.8.0 # Installed as dependency for qiskit-qir
+# pyrsistent==0.19.3 # Installed as dependency for jsonschema
+# python-dateutil==2.8.2 # Installed as dependency for arrow, botocore, conan, ibm-cloud-sdk-core, ibm-platform-services, jupyter-client, jupyterhub, matplotlib, nasdaq-data-link, pandas, qiskit-ibm-experiment, qiskit-ibm-provider, qiskit-ibm-runtime, qiskit-ibmq-provider, qiskit-terra
+# python-json-logger==2.0.7 # Installed as dependency for jupyter-events, jupyter-telemetry
+# python-markdown-math==0.8 # Installed as dependency for azure-quantum
+# pytz==2023.3 # Installed as dependency for pandas, yfinance
+# pywavelets==1.4.1 # Installed as dependency for scikit-image
+# pyyaml==6.0 # Installed as dependency for bokeh, conan, dask, distributed, jupyter-events, jupyter-nbextensions-configurator, papermill
+# pyzmq==25.1.0 # Installed as dependency for ipykernel, jupyter-client, jupyter-console, jupyter-resource-usage, jupyter-server, nbclassic, notebook, qtconsole
+# qdldl==0.1.7 # Installed as dependency for osqp
+# qiskit==0.43.2 # Installed as dependency for gaqqie-door, ibm-quantum-widgets, qc-grader, qiskit-qir
+# qiskit-aer==0.12.1 # Installed as dependency for qiskit, qiskit-braket-provider
+# qiskit-dynamics==0.4.1 # Installed as dependency for qiskit-experiments
+# qiskit-ibm-experiment==0.3.3 # Installed as dependency for qiskit-experiments
+# qiskit-ibm-provider==0.6.1 # Installed as dependency for qiskit-ibm-runtime
+# qiskit-ibmq-provider==0.20.2 # Installed as dependency for mthree, qiskit
+# qiskit-optimization==0.5.0 # Installed as dependency for qiskit-finance
+# qiskit-terra==0.24.1 # Installed as dependency for mapomatic, mthree, prototype-zne, qiskit, qiskit-aer, qiskit-aqt-provider, qiskit-braket-provider, qiskit-dynamics, qiskit-experiments, qiskit-finance, qiskit-ibm-experiment, qiskit-ibm-provider, qiskit-ibm-runtime, qiskit-ibmq-provider, qiskit-ionq, qiskit-machine-learning, qiskit-nature, qiskit-optimization, qiskit-qasm3-import, qiskit-qir
+# qtconsole==5.4.3 # Installed as dependency for jupyter
+# qtpy==2.3.1 # Installed as dependency for qtconsole
+# requests==2.31.0 # Installed as dependency for azure-core, conan, dash, ibm-cloud-sdk-core, ibm-platform-services, iqm-client, jupyterhub, jupyterlab-server, msal, msrest, nasdaq-data-link, nbdime, papermill, qc-grader, qiskit-aqt-provider, qiskit-ibm-experiment, qiskit-ibm-provider, qiskit-ibm-runtime, qiskit-ibmq-provider, qiskit-ionq, requests-ntlm, requests-oauthlib, yfinance
+# requests-ntlm==1.1.0 # Installed as dependency for qiskit-ibm-experiment, qiskit-ibm-provider, qiskit-ibm-runtime, qiskit-ibmq-provider
+# requests-oauthlib==1.3.1 # Installed as dependency for msrest
+# retry==0.9.2 # Installed as dependency for qiskit-ionq
+# retrying==1.3.3 # Installed as dependency for dash, qiskit-braket-provider
+# rfc3339-validator==0.1.4 # Installed as dependency for jupyter-events
+# rfc3986-validator==0.1.1 # Installed as dependency for jupyter-events
+# ruamel.yaml==0.17.32 # Installed as dependency for jupyter-telemetry
+# ruamel.yaml.clib==0.2.7 # Installed as dependency for ruamel.yaml
+# rustworkx==0.13.0 # Installed as dependency for mapomatic, qiskit-experiments, qiskit-nature, qiskit-terra
+# s3transfer==0.6.1 # Installed as dependency for boto3
+# scikit-learn==1.3.0 # Installed as dependency for qiskit-machine-learning, qiskit-nature
+# scipy==1.11.1 # Installed as dependency for amazon-braket-default-simulator, cvxpy, ecos, kaleidoscope, lmfit, manimlib, mthree, osqp, pyscf, qdldl, qiskit-aer, qiskit-dynamics, qiskit-experiments, qiskit-finance, qiskit-machine-learning, qiskit-nature, qiskit-optimization, qiskit-terra, scikit-image, scikit-learn, scs, statsmodels
+# scs==3.2.3 # Installed as dependency for cvxpy
+# seaborn==0.12.2 # Installed as dependency for kaleidoscope
+# secretstorage==3.3.3 # Installed as dependency for keyring
+# send2trash==1.8.2 # Installed as dependency for jupyter-server, nbclassic, notebook
+# setuptools==68.0.0 # Installed as dependency for amazon-braket-sdk, cvxpy, jupyter-contrib-core, qiskit-braket-provider, qiskit-finance, qiskit-machine-learning, qiskit-nature, qiskit-optimization, scikit-build
+# simpervisor==1.0.0 # Installed as dependency for jupyter-server-proxy
+# six==1.16.0 # Installed as dependency for asttokens, azure-core, azure-identity, bleach, docplex, gaqqie-door, html5lib, isodate, launchpadlib, nasdaq-data-link, onetimepass, patsy, pyflyby, python-dateutil, retrying, rfc3339-validator
+# smmap==5.0.0 # Installed as dependency for gitdb
+# sniffio==1.3.0 # Installed as dependency for anyio
+# sortedcontainers==2.4.0 # Installed as dependency for distributed
+# soupsieve==2.4.1 # Installed as dependency for beautifulsoup4
+# spectate==1.0.1 # Installed as dependency for ipycytoscape
+# sqlalchemy==2.0.17 # Installed as dependency for alembic, jupyterhub
+# stack-data==0.6.2 # Installed as dependency for ipython
+# stevedore==5.1.0 # Installed as dependency for qiskit-terra
+# symengine==0.9.2 # Installed as dependency for qiskit-terra
+# sympy==1.12 # Installed as dependency for amazon-braket-sdk, onnxruntime, qiskit-terra
+# tblib==2.0.0 # Installed as dependency for distributed
+# tenacity==8.2.2 # Installed as dependency for papermill, plotly
+# terminado==0.17.1 # Installed as dependency for jupyter-server, jupyter-server-terminals, nbclassic, notebook
+# textwrap3==0.9.2 # Installed as dependency for ansiwrap
+# threadpoolctl==3.1.0 # Installed as dependency for scikit-learn
+# tifffile==2023.4.12 # Installed as dependency for scikit-image
+# tinycss2==1.2.1 # Installed as dependency for nbconvert
+# toml==0.10.2 # Installed as dependency for pyflyby
+# tomli==2.0.1 # Installed as dependency for autopep8, jupyterlab, scikit-build
+# toolz==0.12.0 # Installed as dependency for altair, cytoolz, dask, distributed, partd
+# tornado==6.3.2 # Installed as dependency for bokeh, distributed, ipykernel, jupyter-client, jupyter-contrib-core, jupyter-contrib-nbextensions, jupyter-nbextensions-configurator, jupyter-server, jupyterhub, jupyterlab, nbclassic, nbdime, nbgitpuller, notebook, terminado
+# tqdm==4.65.0 # Installed as dependency for manimlib, papermill
+# traitlets==5.9.0 # Installed as dependency for comm, ipykernel, ipympl, ipython, ipywidgets, jupyter-client, jupyter-console, jupyter-contrib-core, jupyter-contrib-nbextensions, jupyter-core, jupyter-events, jupyter-nbextensions-configurator, jupyter-server, jupyter-telemetry, jupyterhub, jupyterlab-git, matplotlib-inline, nbclassic, nbclient, nbconvert, nbformat, notebook, qtconsole, voila
+# typeguard==4.0.0 # Installed as dependency for qc-grader
+# typing-extensions==4.7.0 # Installed as dependency for alembic, altair, async-lru, azure-core, azure-storage-blob, dash, pydantic, qiskit-ibm-experiment, qiskit-ibm-provider, qiskit-nature, sqlalchemy, typeguard
+# tzdata==2023.3 # Installed as dependency for pandas
+# uncertainties==3.1.7 # Installed as dependency for lmfit, qiskit-experiments
+# urllib3==1.26.16 # Installed as dependency for botocore, conan, distributed, gaqqie-door, ibm-cloud-sdk-core, ibm-platform-services, qiskit-finance, qiskit-ibm-experiment, qiskit-ibm-provider, qiskit-ibm-runtime, qiskit-ibmq-provider, requests
+# watchdog==3.0.0 # Installed as dependency for scriptedforms
+# wcwidth==0.2.6 # Installed as dependency for prompt-toolkit
+# webencodings==0.5.1 # Installed as dependency for bleach, html5lib, tinycss2
+# websocket-client==1.6.1 # Installed as dependency for jupyter-server, qiskit-ibm-provider, qiskit-ibm-runtime, qiskit-ibmq-provider
+# websockets==11.0.3 # Installed as dependency for qiskit-ibm-provider, qiskit-ibmq-provider, voila
+# werkzeug==2.2.3 # Installed as dependency for dash, flask
+# wheel==0.40.0 # Installed as dependency for scikit-build
+# widgetsnbextension==4.0.7 # Installed as dependency for ipywidgets
+# wrapt==1.15.0 # Installed as dependency for deprecated
+# wurlitzer==3.0.3 # Installed as dependency for matlab-kernel
+# xyzservices==2023.5.0 # Installed as dependency for bokeh
+# y-py==0.5.9 # Installed as dependency for jupyter-ydoc, ypy-websocket, ypywidgets
+# yarl==1.9.2 # Installed as dependency for aiohttp
+# yfinance==0.2.22 # Installed as dependency for qiskit-finance
+# yjs-widgets==0.3.4 # Installed as dependency for jupytercad
+# ypy-websocket==0.8.2 # Installed as dependency for jupyter-server-ydoc
+# ypywidgets==0.2.0 # Installed as dependency for jupytercad
+# zict==3.0.0 # Installed as dependency for distributed
+# zipp==3.15.0 # Installed as dependency for importlib-metadata
