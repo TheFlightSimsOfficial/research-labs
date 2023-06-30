@@ -129,6 +129,7 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	sudo pip install "jupyterlab-image-editor==0.1.0"
 	sudo pip install "jupyterlab-katex==3.4.0"
 	sudo pip install "jupyterlab-kernelspy==3.1.0"
+	sudo pip install "jupyterlab-language-pack-es-ES==4.0.post0"
 	sudo pip install "jupyterlab-language-pack-de-de==4.0.post0"
 	sudo pip install "jupyterlab-language-pack-fr-fr==4.0.post0"
 	sudo pip install "jupyterlab-language-pack-ja-jp==4.0.post0"
