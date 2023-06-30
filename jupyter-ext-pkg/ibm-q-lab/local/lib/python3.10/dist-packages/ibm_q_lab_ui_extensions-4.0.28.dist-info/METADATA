@@ -21,7 +21,7 @@ Classifier: Framework :: Jupyter
 Requires-Python: >=3.6
 Description-Content-Type: text/markdown
 License-File: LICENSE
-Requires-Dist: jupyterlab (==4.0.2)
+Requires-Dist: jupyterlab (==3.6.5)
 
 # ibm_q_lab_ui_extensions
 
