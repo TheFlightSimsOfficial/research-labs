@@ -63,8 +63,9 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	sudo pip install manimlib pymysql
 	
 	# Enable IBM-Q
-	echo -e "Copying IBM-Q, Qiskit and its dependencies..."
+	echo -e "Copying IBM-Q and its dependencies..."
 	sudo cp -r ~/admin-scripts/jupyter-external-packages/ibm-q-lab/local /usr
+	sudo cp -r ~/admin-scripts/jupyter-external-packages/jupyter-cad/local /usr
 	sudo pip install openqasm3 docplex h5py fastdtw scikit-learn fastdtw nasdaq-data-link yfinance lmfit uncertainties terminado 'dill==0.3.5' 'jupyter-server>=2.0.1' 'jupyterlab==3.6.1' 'urllib3==1.26.16' 'PyJWT>=2.4.0' 'voila==0.5.0a4'
 	sudo pip uninstall -y jupyterlab-genv
 	echo -e "Vailidating pip installations..."
@@ -230,6 +231,10 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	echo -e "Disabling the classic mode"
 	sudo jupyter labextension disable @jupyterlab/extensionmanager-extension
 	sudo jupyter labextension disable @jupyterlab/help-extension:launch-classic
+	
+	# Adding AutoCAD for Jupyter Lab
+	echo -e "Enabling AutoCAD for Jupyter"
+	sudo cp -r ~/admin-scripts/jupyter-external-packages/jupyter-cad/local /usr
 
 	# Auto removal
 	sudo apt autoremove -y
@@ -243,6 +248,7 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	
 	# Re-update packages
 	sudo apt update && sudo apt install --fix-missing -y && sudo apt full-upgrade -y
+	sudo jupyter labextension update --all
 	sleep 10
 
 	# Prepar MySQL databases
