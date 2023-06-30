@@ -1,6 +1,6 @@
 #!/bin/bash
 CONFIRM="n"
-echo -n "Enable JupyterLab on this server. Continue? (y/N): "
+echo -n "Enable Research Labs on this server. Continue? (y/N): "
 read -n 1 CONFIRM_INPUT
 if [ -n "$CONFIRM_INPUT" ]; then
 	CONFIRM=$CONFIRM_INPUT
@@ -29,7 +29,7 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	# Also install NVIDIA Drivers and CUDA compliers for users whom WSL2 installed.
 	# Usefull when you use further application, build from source (e.g. install from source from GitHub).
 	echo -e "Installing compliers..."
-	sudo apt install -y gcc g++ gdb make cmake automake ninja-build rsync zip openssh-server openssh-client pwgen netcat libopenal1 wsl libcurl4-gnutls-dev librtmp-dev nvidia-utils-525-server nvidia-headless-525-server nvidia-driver-525-server sox ffmpeg libcairo2 libcairo2-dev libgirepository1.0-dev
+	sudo apt install -y gcc g++ gdb make cmake automake ninja-build rsync zip pwgen netcat libopenal1 wsl libcurl4-gnutls-dev librtmp-dev sox ffmpeg libcairo2 libcairo2-dev libgirepository1.0-dev
 	
 	# Plus, install Python3
 	sudo apt install -y python3 python3-pip git nano neofetch net-tools mysql-server 
@@ -66,7 +66,7 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	echo -e "Copying IBM-Q and its dependencies..."
 	sudo cp -r ~/admin-scripts/jupyter-external-packages/ibm-q-lab/local /usr
 	sudo cp -r ~/admin-scripts/jupyter-external-packages/jupyter-cad/local /usr
-	sudo pip install openqasm3 docplex h5py fastdtw scikit-learn fastdtw nasdaq-data-link yfinance lmfit uncertainties terminado 'dill==0.3.5' 'jupyter-server>=2.0.1' 'jupyterlab==3.6.1' 'urllib3==1.26.16' 'PyJWT>=2.4.0' 'voila==0.5.0a4'
+	sudo pip install openqasm3 docplex h5py fastdtw scikit-learn fastdtw nasdaq-data-link yfinance lmfit uncertainties terminado 'dill==0.3.5' 'jupyter-server>=2.0.1' 'jupyterlab==3.6.5' 'urllib3==1.26.16' 'PyJWT>=2.4.0' 'voila==0.5.0a4'
 	sudo pip uninstall -y jupyterlab-genv
 	echo -e "Vailidating pip installations..."
     sudo pip check
