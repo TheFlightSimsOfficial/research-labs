@@ -13,10 +13,7 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	sleep 10
 	echo Creating Jupyter secures and enviroments, not Jupyter and its cores...
 	
-	# Add Xeus C++ kernel to apt.
-	echo -e "Add Xeus C++ kernel to repository..."
-	sudo add-apt-repository ppa:ppa-verse/xeus-cling --yes
-	sudo apt full-upgrade -y
+	sudo apt update && sudo apt full-upgrade -y
 	sudo apt install -y openssl pwgen netcat
 
 	# Install NodeJS, Npm and Native Authenticator 
@@ -29,7 +26,8 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	# Also install NVIDIA Drivers and CUDA compliers for users whom WSL2 installed.
 	# Usefull when you use further application, build from source (e.g. install from source from GitHub).
 	echo -e "Installing compliers..."
-	sudo apt install -y gcc g++ gdb make cmake automake ninja-build rsync zip pwgen netcat libopenal1 wsl libcurl4-gnutls-dev librtmp-dev sox ffmpeg libcairo2 libcairo2-dev libgirepository1.0-dev
+	sudo apt install -y gcc g++ gdb make cmake automake ninja-build rsync zip
+	sudo apt install -y libopenal1 libcurl4-gnutls-dev librtmp-dev sox ffmpeg libcairo2 libcairo2-dev libgirepository1.0-dev
 	
 	# Plus, install Python3
 	sudo apt install -y python3 python3-pip git nano neofetch net-tools mysql-server 
@@ -220,11 +218,12 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
     sudo pip check
 	
 	# Installing kernel
-	sudo apt install -y libxeus-cling0 libxeus1 libxeus6 libxwidgets1 r-cran-irdisplay r-cran-irkernel r-cran-repr ruby-ipynbdiff xcpp xeus-cling-dev xeus-dev xwidgets-dev
-	sudo pip install matlab_kernel
-	sudo pip install jupyter-c-kernel
+	sudo apt install -y r-cran-irdisplay r-cran-irkernel r-cran-repr
+	sudo pip install matlab_kernel jupyter-c-kernel 'jupyter-cpp-kernel==1.0.0a2'
 	sudo install_c_kernel
+	sudo install_cpp_kernel
 	sudo cp -r ~/admin-scripts/jupyter-external-packages/c-kernel/share /usr
+	sudo cp -r ~/admin-scripts/jupyter-external-packages/cpp-kernel/share /usr
 	sudo cp -r ~/admin-scripts/jupyter-external-packages/qiskit-kernel/local /usr
 	
 	# Disable legacy features (Notebook, Extension Manager) because of security issues
