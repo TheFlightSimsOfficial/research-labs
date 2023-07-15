@@ -110,7 +110,6 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	sudo pip install "jlab-enhanced-cell-toolbar==3.5.1"
 	sudo pip install "jsonpointer==2.4"
 	sudo pip install "jupyter-archive==3.3.4"
-	sudo pip install "jupyter-c-kernel==1.2.2"
 	sudo pip install "jupyter-contrib-nbextensions==0.7.0"
 	sudo pip install "jupyter-resource-usage==0.7.2"
 	sudo pip install "jupytercad==0.3.3"
@@ -157,9 +156,6 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	sudo pip install "mamba==0.11.2"
 	sudo pip install "manimlib==0.2.0"
 	sudo pip install "mapomatic==0.8.0"
-	sudo pip install "matlab==0.1"
-	sudo pip install "matlab-kernel==0.17.1"
-	sudo pip install "matlab-proxy==0.7.0"
 	sudo pip install "mthree==2.5.1"
 	sudo pip install "munkres==1.1.4"
 	sudo pip install "nbgitpuller==1.1.1"
@@ -219,7 +215,7 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	
 	# Installing kernel
 	sudo apt install -y r-cran-irdisplay r-cran-irkernel r-cran-repr
-	sudo pip install matlab_kernel jupyter-c-kernel 'jupyter-cpp-kernel==1.0.0a2'
+	sudo pip install jupyter-c-kernel 'jupyter-cpp-kernel==1.0.0a2'
 	sudo install_c_kernel
 	sudo install_cpp_kernel
 	sudo cp -r ~/admin-scripts/jupyter-external-packages/c-kernel/share /usr
