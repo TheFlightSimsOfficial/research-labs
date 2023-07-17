@@ -8,6 +8,10 @@ This repository enables [Windows Subsystem for Linux](https://aka.ms/wsl) capabi
 
 For better understanding, you can see the [wiki page](https://github.com/TheFlightSims/research-labs/wiki).
 
+# Getting started with Codespace
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/TheFlightSims/research-labs)
+
 # Features
 
 See more at [wiki](https://github.com/TheFlightSims/research-labs/wiki/Getting-started)
