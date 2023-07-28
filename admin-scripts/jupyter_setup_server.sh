@@ -63,14 +63,13 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	# Enable IBM-Q
 	echo -e "Copying IBM-Q and its dependencies..."
 	sudo cp -r ~/admin-scripts/jupyter-external-packages/ibm-q-lab/local /usr
-	sudo pip install openqasm3 docplex h5py fastdtw scikit-learn fastdtw nasdaq-data-link yfinance lmfit uncertainties terminado 'dill==0.3.5' 'jupyter-server>=2.0.1' 'jupyterlab==3.6.1' 'urllib3==1.26.16' 'PyJWT>=2.4.0' 'voila==0.5.0a4'
-	sudo pip uninstall -y jupyterlab-genv
+	sudo pip install openqasm3 docplex h5py fastdtw scikit-learn fastdtw nasdaq-data-link yfinance lmfit uncertainties terminado 'dill==0.3.5' 'jupyterlab==3.6.1' 'urllib3==1.26.16' 'PyJWT>=2.4.0'
 	echo -e "Vailidating pip installations..."
     sudo pip check
 
 	# Sudo install other PIP packages from database
 	sudo pip install "altair==5.0.1"
-	sudo pip install "aquirdturtle-collapsible-headings==3.1.0"
+	sudo pip install "aquirdturtle-collapsible-headings==3.0.1"
 	sudo pip install "async-lru==2.0.2"
 	sudo pip install "autopep8==2.0.2"
 	sudo pip install "azure-quantum==0.28.277227"
@@ -138,7 +137,7 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	sudo pip install "jupyterlab-mathjax3==4.3.0"
 	sudo pip install "jupyterlab-open-url-parameter==0.1.0"
 	sudo pip install "jupyterlab-pullrequests==3.0.2"
-	sudo pip install "jupyterlab-pyflyby==5.0.0"
+	sudo pip install "jupyterlab-pyflyby==4.0.0"
 	sudo pip install "jupyterlab-pytutor==0.1.1"
 	sudo pip install "jupyterlab-recents==3.2.0"
 	sudo pip install "jupyterlab-skip-traceback==4.0.3"
@@ -205,7 +204,7 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	sudo pip install "unattended-upgrades==0.1"
 	sudo pip install "unicodedata2==15.0.0"
 	sudo pip install "uri-template==1.3.0"
-	sudo pip install "voila==0.5.0a4"
+	sudo pip install "voila==0.3.7"
 	sudo pip install "webcolors==1.13"
 	sudo pip install "xlrd==2.0.1"
 	echo -e "Vailidating pip installations..."
