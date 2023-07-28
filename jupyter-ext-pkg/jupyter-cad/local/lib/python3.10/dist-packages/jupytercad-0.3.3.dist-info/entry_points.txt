@@ -1,6 +1,0 @@
-[console_scripts]
-jupyter-cad = jupytercad.cadapp:main
-
-[jupyter_ydoc]
-FCStd = jupytercad.fcstd_ydoc:YFCStd
-jcad = jupytercad.jcad_ydoc:YJCad
