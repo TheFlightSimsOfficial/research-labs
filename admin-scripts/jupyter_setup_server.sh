@@ -209,6 +209,7 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	sudo pip install "xlrd==2.0.1"
 	echo -e "Vailidating pip installations..."
     sudo pip check
+	sudo jupyter lab build
 	
 	# Installing kernel
 	sudo apt install -y r-cran-irdisplay r-cran-irkernel r-cran-repr
