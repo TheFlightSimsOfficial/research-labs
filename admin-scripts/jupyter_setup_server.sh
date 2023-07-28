@@ -64,7 +64,7 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	echo -e "Copying IBM-Q and its dependencies..."
 	sudo cp -r ~/admin-scripts/jupyter-external-packages/ibm-q-lab/local /usr
 	sudo cp -r ~/admin-scripts/jupyter-external-packages/jupyter-cad/local /usr
-	sudo pip install openqasm3 docplex h5py fastdtw scikit-learn fastdtw nasdaq-data-link yfinance lmfit uncertainties terminado 'dill==0.3.5' 'jupyter-server>=2.0.1' 'jupyterlab==3.6.5' 'urllib3==1.26.16' 'PyJWT>=2.4.0' 'voila==0.5.0a4'
+	sudo pip install openqasm3 docplex h5py fastdtw scikit-learn fastdtw nasdaq-data-link yfinance lmfit uncertainties terminado 'dill==0.3.5' 'jupyter-server>=2.0.1' 'jupyterlab==3.6.1' 'urllib3==1.26.16' 'PyJWT>=2.4.0' 'voila==0.5.0a4'
 	sudo pip uninstall -y jupyterlab-genv
 	echo -e "Vailidating pip installations..."
     sudo pip check
@@ -112,7 +112,6 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	sudo pip install "jupyter-archive==3.3.4"
 	sudo pip install "jupyter-contrib-nbextensions==0.7.0"
 	sudo pip install "jupyter-resource-usage==0.7.2"
-	sudo pip install "jupytercad==0.3.3"
 	sudo pip install "jupyterhub-nativeauthenticator==1.2.0"
 	sudo pip install "jupyterlab-autoversion==0.3.6"
 	sudo pip install "jupyterlab-cell-flash==0.3.5"
@@ -226,10 +225,6 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	echo -e "Disabling the classic mode"
 	sudo jupyter labextension disable @jupyterlab/extensionmanager-extension
 	sudo jupyter labextension disable @jupyterlab/help-extension:launch-classic
-	
-	# Adding AutoCAD for Jupyter Lab
-	echo -e "Enabling AutoCAD for Jupyter"
-	sudo cp -r ~/admin-scripts/jupyter-external-packages/jupyter-cad/local /usr
 
 	# Auto removal
 	sudo apt autoremove -y
@@ -272,14 +267,6 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	sudo cp -TRv ~/admin-scripts/user-interface/hub-login/static /usr/local/share/jupyterhub/static
 	sudo cp -TRv ~/admin-scripts/user-interface/hub-login/templates /usr/local/share/jupyterhub/templates
 	
-	echo -e "Install Lab theme"
-	sudo rmdir --ignore-fail-on-non-empty /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-dark-extension
-	sudo rmdir --ignore-fail-on-non-empty /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-light-extension
-	sudo mkdir /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-dark-extension
-	sudo mkdir /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-light-extension
-	sudo cp -TRv /root/admin-scripts/user-interface/lab/dark /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-dark-extension
-	sudo cp -TRv /root/admin-scripts/user-interface/lab/light /usr/local/share/jupyter/lab/themes/@jupyterlab/theme-light-extension	
-	
 	# Copy tutorial notebooks into /etc/jupyter
 	echo -e "Coping tutorial notebooks into global folder..."
 	sudo mkdir /etc/jupyter/tutorials-notebooks
@@ -289,10 +276,11 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	# Security in folder /etc/jupyter. See issue #11
 	sudo chmod 700 /etc/jupyter
 	
-	echo -e "Cleaning up pip caches..."
+	echo -e "Cleaning up caches..."
 	sudo pip cache purge
+	sudo npm cache clear --force
 	
-	echo -e "\nInstalled Jupyter Lab for multiple users!"
+	echo -e "\nInstalled Jupyter Lab for multiple users!\nPlease sign out to update all necessary variables!"
 else
 	echo "Aborted!"
 fi

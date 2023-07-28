@@ -274,7 +274,7 @@ xlrd==2.0.1
 # jupyter-telemetry==0.1.0 # Installed as dependency for jupyterhub
 # jupyter-ydoc==0.2.4 # Installed as dependency for jupyter-server-ydoc, jupyterlab
 # jupyterhub==4.0.1 # Installed as dependency for jupyterhub-nativeauthenticator
-# jupyterlab==3.6.5 # Installed as dependency for aquirdturtle-collapsible-headings, ibm-q-lab-server-extension, ibm-q-lab-ui-extensions, jupytercad, jupyterlab-autoversion, jupyterlab-drawio, jupyterlab-lsp, jupyterlab-markup, jupyterlab-pullrequests, jupyterlab-spreadsheet-editor, jupyterlab-tour, lckr-jupyterlab-variableinspector, scriptedforms
+# jupyterlab==3.6.1 # Installed as dependency for aquirdturtle-collapsible-headings, ibm-q-lab-server-extension, ibm-q-lab-ui-extensions, jupytercad, jupyterlab-autoversion, jupyterlab-drawio, jupyterlab-lsp, jupyterlab-markup, jupyterlab-pullrequests, jupyterlab-spreadsheet-editor, jupyterlab-tour, lckr-jupyterlab-variableinspector, scriptedforms
 # jupyterlab-git==0.39.3 # Installed as dependency for jupyterlab-pullrequests
 # jupyterlab-pygments==0.2.2 # Installed as dependency for nbconvert
 # jupyterlab-server==2.23.0 # Installed as dependency for jupyterlab, voila
