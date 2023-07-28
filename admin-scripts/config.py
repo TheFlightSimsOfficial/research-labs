@@ -1,4 +1,4 @@
-import os, math, sys, pwd, subprocess, pymysql
+import os, math, sys, pwd, subprocess, pymysql, hashlib
 
 ##################################################################################################
 # These functions are used to provide advanced settings for JupyterHub
@@ -56,14 +56,18 @@ def pre_spawn_hook(spawner):
     try:
         pwd.getpwnam(username)
     except KeyError:
-        subprocess.check_call(['useradd', '-ms', '/bin/bash', username])
-        subprocess.check_call(['cp', '-TRv', '/etc/jupyter/tutorials-notebooks', '/home/' + username])
-        subprocess.check_call(['chmod', '777', '/home/' + username + '/qiskit-tutorials'])
-        subprocess.check_call(['chmod', '777', '/home' + username + '/r-tutorials'])
+        h = hashlib.new("MD5")
+        diruname = h.update(username.encode('UTF-8'))
+        subprocess.check_call(['mkdir', '/home/' + diruname])
+        subprocess.check_call(['useradd', '-m', '-d', '/home/' + diruname, username])
+        subprocess.check_call(['cp', '-TRv', '/etc/jupyter/tutorials-notebooks', '/home/' + diruname])
+        subprocess.check_call(['chmod', '777', '/home/' + diruname + '/qiskit-tutorials'])
+        subprocess.check_call(['chmod', '777', '/home' + diruname + '/cpp-tutorials'])
 ###
 
 ###############################
 ##################################################################################################
+
 c = get_config()
 
 c.Authenticator.admin_users = admin_user()
@@ -79,7 +83,7 @@ c.ConfigurableHTTPProxy.auth_token = '/etc/jupyter/proxy_auth_token'
 c.PAMAuthenticator.admin_groups = {'administrators'}
 
 c.JupyterHub.authenticator_class = 'nativeauthenticator.NativeAuthenticator'
-c.JupyterHub.api_page_default_limit = 3
+c.JupyterHub.api_page_default_limit = 5
 c.JupyterHub.cookie_secret_file = '/etc/jupyter/jupyterhub_cookie_secret'
 c.JupyterHub.db_url = mysql_connect_string()
 c.JupyterHub.debug_db = True
