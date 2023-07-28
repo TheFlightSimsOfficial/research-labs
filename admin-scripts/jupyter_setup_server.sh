@@ -278,7 +278,6 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	
 	echo -e "Cleaning up caches..."
 	sudo pip cache purge
-	sudo npm cache clear --force
 	
 	echo -e "\nInstalled Jupyter Lab for multiple users!\nPlease sign out to update all necessary variables!"
 else
