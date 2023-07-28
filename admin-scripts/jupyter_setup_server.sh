@@ -63,7 +63,6 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	# Enable IBM-Q
 	echo -e "Copying IBM-Q and its dependencies..."
 	sudo cp -r ~/admin-scripts/jupyter-external-packages/ibm-q-lab/local /usr
-	sudo cp -r ~/admin-scripts/jupyter-external-packages/jupyter-cad/local /usr
 	sudo pip install openqasm3 docplex h5py fastdtw scikit-learn fastdtw nasdaq-data-link yfinance lmfit uncertainties terminado 'dill==0.3.5' 'jupyter-server>=2.0.1' 'jupyterlab==3.6.1' 'urllib3==1.26.16' 'PyJWT>=2.4.0' 'voila==0.5.0a4'
 	sudo pip uninstall -y jupyterlab-genv
 	echo -e "Vailidating pip installations..."
