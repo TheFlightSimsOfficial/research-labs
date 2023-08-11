@@ -213,11 +213,9 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	
 	# Installing kernel
 	sudo apt install -y r-cran-irdisplay r-cran-irkernel r-cran-repr
-	sudo pip install jupyter-c-kernel 'jupyter-cpp-kernel==1.0.0a2'
+	sudo pip install jupyter-c-kernel 'jupyter-cpp-kernel==1.0.0a3'
 	sudo install_c_kernel
-	sudo install_cpp_kernel
 	sudo cp -r ~/admin-scripts/jupyter-external-packages/c-kernel/share /usr
-	sudo cp -r ~/admin-scripts/jupyter-external-packages/cpp-kernel/share /usr
 	sudo cp -r ~/admin-scripts/jupyter-external-packages/qiskit-kernel/local /usr
 	
 	# Disable legacy features (Notebook, Extension Manager) because of security issues
