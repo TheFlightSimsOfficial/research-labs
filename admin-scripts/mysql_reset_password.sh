@@ -9,20 +9,20 @@ fi
 echo
 
 if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
-	sudo apt install -y pwgen netcat
+	apt install -y pwgen netcat
 	echo 'Shutting down any mysql processes...'
-	sudo service mysql stop
-	sudo killall -vw mysqld
-	sudo mysqld_safe --skip-grant-tables >res 2>&1 &
+	service mysql stop
+	killall -vw mysqld
+	mysqld_safe --skip-grant-tables >res 2>&1 &
 	echo 'Resetting password... hold on'
 	sleep 5
-	sudo mysql -e "FLUSH PRIVILEGES;ALTER USER 'root'@'localhost' IDENTIFIED BY 'administrator';FLUSH PRIVILEGES;"
+	mysql -e "FLUSH PRIVILEGES;ALTER USER 'root'@'localhost' IDENTIFIED BY 'administrator';FLUSH PRIVILEGES;"
 	echo 'Cleaning up...'
-	sudo rm res
-	sudo killall -v mysqld
-	sudo service mysql restart
+	rm res
+	killall -v mysqld
+	service mysql restart
 	echo -e "MySQL password has been reset to the default\nMySQL default root password: administrator"
-	sudo echo 'administrator' > /etc/jupyter/mysql_password.txt
+	echo 'administrator' > /etc/jupyter/mysql_password.txt
 else
 	echo "Aborted!"
 fi
