@@ -9,16 +9,16 @@ fi
 echo
 
 if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
-	sudo apt update && sudo apt full-upgrade -y
-	sudo apt install libgirepository1.0-dev
-	sudo pip install -r ~/admin-scripts/pip_packages.txt
-	sudo pip install jupyter-c-kernel 'jupyter-cpp-kernel==1.0.0a2'
-	sudo install_c_kernel
-	sudo install_cpp_kernel
-	sudo cp -r ~/admin-scripts/jupyter-external-packages/c-kernel/share /usr
-	sudo cp -r ~/admin-scripts/jupyter-external-packages/qiskit-kernel/local /usr
-	sudo npm update npm
-	sudo npm install
+	apt update && apt full-upgrade -y
+	apt install libgirepository1.0-dev
+	pip install -r ~/admin-scripts/pip_packages.txt
+	pip install jupyter-c-kernel 'jupyter-cpp-kernel==1.0.0a2'
+	install_c_kernel
+	install_cpp_kernel
+	cp -r ~/admin-scripts/jupyter-external-packages/c-kernel/share /usr
+	cp -r ~/admin-scripts/jupyter-external-packages/qiskit-kernel/local /usr
+	npm update npm
+	npm install
 	echo "Upgrade completed"
 else
 	echo "Aborted!"
