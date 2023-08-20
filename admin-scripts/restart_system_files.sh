@@ -1,4 +1,4 @@
 #!/bin/bash
-sudo chmod 700 /etc/jupyter
-sudo chmod +rw ~/admin-scripts/*
-sudo chmod +x ~/admin-scripts/*.sh
+chmod 700 /etc/jupyter
+chmod +rw ~/admin-scripts/*
+chmod +x ~/admin-scripts/*.sh
