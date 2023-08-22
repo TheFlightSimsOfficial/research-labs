@@ -1,3 +1,0 @@
-[console_scripts]
-ibmq-jupyter-server-health-ext = jupyter_server_health.application:main
-
