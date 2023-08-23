@@ -29,8 +29,7 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	apt install -y libopenal1 libcurl4-gnutls-dev librtmp-dev sox ffmpeg libcairo2 libcairo2-dev libgirepository1.0-dev
 
 	# NVIDIA drivers and compilers
-	apt install -y nvidia-utils-535-server nvidia-utils-535
-	apt install -y nvidia-cuda-toolkit-gcc
+	apt install -y nvidia-utils-535-server
 	
 	# Install Python3 and PyPI packgae manager
 	apt install -y python3 python3-pip
