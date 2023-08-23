@@ -11,7 +11,7 @@ echo
 if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	apt update && apt full-upgrade -y
 	pip install -r ~/admin-scripts/pip_packages.txt
-	pip install ~/admin-scripts/jupyter-external-packages/*.whl
+	pip install ~/admin-scripts/external-packages/*.whl
 	npm update npm
 	npm install
 	echo "Upgrade completed"
