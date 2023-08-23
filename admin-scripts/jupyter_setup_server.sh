@@ -98,7 +98,7 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	jupyter labextension update --all
 	sleep 10
 
-	# Prepar MySQL databases
+	# Prepare MySQL databases
 	echo Preparing MySQL databases...
 	service mysql stop
 	killall -vw mysqld
