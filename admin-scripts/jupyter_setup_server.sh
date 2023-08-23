@@ -19,7 +19,6 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	# Install NodeJS, Npm and Native Authenticator 
 	echo -e "Installing NodeJS..."
 	~/admin-scripts/reset_cache_to_install_node.sh
-	apt update && apt full-upgrade -y
 	apt install -y nodejs yarn
 	
 	# Install compliers (GCC, G++, MAKE and ninja-build), remoting (OpenSSH), Password Generator, Network diagnostics and OpenAl library.
