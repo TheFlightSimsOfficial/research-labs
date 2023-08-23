@@ -107,8 +107,6 @@ pymysql==1.1.0
 pyscf==2.2.1
 pysocks==1.7.1
 pyspnego==0.9.1
-python-apt==2.4.0+ubuntu1
-qc-grader==0.16.1
 qiskit-aqt-provider==0.4.3
 qiskit-braket-provider==0.0.4
 qiskit-experiments==0.5.2
