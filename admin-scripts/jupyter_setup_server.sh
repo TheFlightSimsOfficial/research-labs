@@ -88,9 +88,6 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	jupyter labextension disable @jupyterlab/extensionmanager-extension
 	jupyter labextension disable @jupyterlab/help-extension:launch-classic
 
-	# Auto removal
-	apt autoremove -y
-
 	# Create a service for jupyter
 	echo -e "Create a service for Jupyter"
 	cp ~/admin-scripts/rl.service /etc/init.d/researchlabs
@@ -139,6 +136,7 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	chmod 700 /etc/jupyter
 	
 	# Cleaning up
+	apt autoremove -y
 	echo -e "Cleaning up caches..."
 	pip cache purge
 	
