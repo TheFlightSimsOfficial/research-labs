@@ -48,11 +48,11 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	# Create cookie secret file and proxy authenticator
 	echo -e "Creating authenticator"
 	touch /etc/jupyter/proxy_auth_token
-	chown /etc/jupyter/proxy_auth_token
+	chown :sudo /etc/jupyter/proxy_auth_token
 	chmod g+rw /etc/jupyter/proxy_auth_token
 	openssl rand -hex 32 > /etc/jupyter/proxy_auth_token
 	touch /etc/jupyter/jupyterhub_cookie_secret
-	chown /etc/jupyter/jupyterhub_cookie_secret
+	chown :sudo /etc/jupyter/jupyterhub_cookie_secret
 	chmod g+rw /etc/jupyter/jupyterhub_cookie_secret
 	openssl rand -hex 32 > /etc/jupyter/jupyterhub_cookie_secret
 	chmod 600 /etc/jupyter/jupyterhub_cookie_secret
