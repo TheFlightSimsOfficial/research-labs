@@ -14,7 +14,7 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	echo Creating Jupyter secures and enviroments, not Jupyter and its cores...
 	
 	apt update && apt full-upgrade -y
-	apt install -y openssl pwgen netcat
+	apt install -y openssl pwgen netcat git nano
 
 	# Install NodeJS, Npm and Native Authenticator 
 	echo -e "Installing NodeJS..."
@@ -28,9 +28,16 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	echo -e "Installing compliers..."
 	apt install -y gcc g++ gdb make cmake automake ninja-build rsync zip
 	apt install -y libopenal1 libcurl4-gnutls-dev librtmp-dev sox ffmpeg libcairo2 libcairo2-dev libgirepository1.0-dev
+
+	# NVIDIA drivers and compilers
+	apt install -y nvidia-utils-535-server nvidia-utils-535
+	apt install -y nvidia-cuda-toolkit-gcc
 	
-	# Plus, install Python3
-	apt install -y python3 python3-pip git nano neofetch net-tools mysql-server 
+	# Install Python3 and PyPI packgae manager
+	apt install -y python3 python3-pip
+
+	# Install MySQL Server
+	apt install -y mysql-server
 	
 	# Copy configuration to environment folder
 	echo -e "Copy configurations to folder..."
@@ -61,8 +68,13 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	
 	# Enable IBM-Q
 	echo -e "Copying IBM-Q and its dependencies..."
-	cp -r ~/admin-scripts/jupyter-external-packages/ibm-q-lab/local /usr
-	pip install 'jupyterlab==3.6.1'
+	pip install ~/admin-scripts/jupyter-external-packages/ibm_q_lab_server_extension-4.0.28-py3-none-any.whl
+	pip install ~/admin-scripts/jupyter-external-packages/ibm_q_lab_ui_extensions-4.0.28-py3-none-any.whl
+	pip install ~/admin-scripts/jupyter-external-packages/ibm_quantum_widgets-4.0.28-py3-none-any.whl
+	pip install ~/admin-scripts/jupyter-external-packages/ibmq_jupyter_server_health_ext-0.0.1-py3-none-any.whl
+	pip install ~/admin-scripts/jupyter-external-packages/jupyter_qiskit_kernel-1.0.0-py3-none-any.whl
+
+	# Install additional PyPI packages
 	pip install -r ~/admin-scripts/pip_packages.txt
 	echo -e "Vailidating pip installations..."
 	jupyter lab build
@@ -70,8 +82,6 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 
 	# Installing kernel
 	apt install -y r-cran-irdisplay r-cran-irkernel r-cran-repr
-	pip install jupyter-cpp-kernel
-	cp -r ~/admin-scripts/jupyter-external-packages/qiskit-kernel/local /usr
 	
 	# Disable legacy features (Notebook, Extension Manager) because of security issues
 	echo -e "Disabling the classic mode"
@@ -128,6 +138,7 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	# Security in folder /etc/jupyter. See issue #11
 	chmod 700 /etc/jupyter
 	
+	# Cleaning up
 	echo -e "Cleaning up caches..."
 	pip cache purge
 	
