@@ -63,7 +63,13 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	
 	# Install PIP pre-build packages
 	pip install manimlib pymysql
-	
+
+	# Install additional PyPI packages
+	pip install -r ~/admin-scripts/pip_packages.txt
+	echo -e "Vailidating pip installations..."
+	jupyter lab build
+    pip check
+
 	# Enable IBM-Q
 	echo -e "Copying IBM-Q and its dependencies..."
 	pip install ~/admin-scripts/external-packages/ibm_q_lab_server_extension-4.0.28-py3-none-any.whl
@@ -71,12 +77,6 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	pip install ~/admin-scripts/external-packages/ibm_quantum_widgets-4.0.28-py3-none-any.whl
 	pip install ~/admin-scripts/external-packages/ibmq_jupyter_server_health_ext-0.0.1-py3-none-any.whl
 	pip install ~/admin-scripts/external-packages/jupyter_qiskit_kernel-1.0.0-py3-none-any.whl
-
-	# Install additional PyPI packages
-	pip install -r ~/admin-scripts/pip_packages.txt
-	echo -e "Vailidating pip installations..."
-	jupyter lab build
-    pip check
 
 	# Installing kernel
 	apt install -y r-cran-irdisplay r-cran-irkernel r-cran-repr
