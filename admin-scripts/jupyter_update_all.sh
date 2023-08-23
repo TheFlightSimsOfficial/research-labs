@@ -10,13 +10,8 @@ echo
 
 if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	apt update && apt full-upgrade -y
-	apt install libgirepository1.0-dev
 	pip install -r ~/admin-scripts/pip_packages.txt
-	pip install jupyter-c-kernel 'jupyter-cpp-kernel==1.0.0a2'
-	install_c_kernel
-	install_cpp_kernel
-	cp -r ~/admin-scripts/jupyter-external-packages/c-kernel/share /usr
-	cp -r ~/admin-scripts/jupyter-external-packages/qiskit-kernel/local /usr
+	pip install ~/admin-scripts/jupyter-external-packages/*.whl
 	npm update npm
 	npm install
 	echo "Upgrade completed"
