@@ -39,6 +39,7 @@ jlab-enhanced-cell-toolbar==3.5.1
 jsonpointer==2.4
 jupyter-archive==3.3.4
 jupyter-contrib-nbextensions==0.7.0
+jupyter-cpp-kernel==1.0.0a4
 jupyter-resource-usage==0.7.2
 jupyterhub-nativeauthenticator==1.2.0
 jupyterlab-autoversion==0.3.6
