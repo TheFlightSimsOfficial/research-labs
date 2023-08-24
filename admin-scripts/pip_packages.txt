@@ -79,6 +79,8 @@ lckr-jupyterlab-variableinspector==3.0.9
 lz4==4.3.2
 mamba==0.11.2
 manimlib==0.2.0
+matplotlib==3.7.2
+
 mapomatic==0.8.0
 mthree==2.5.1
 munkres==1.1.4
@@ -118,6 +120,7 @@ rich==13.4.2
 scikit-build==0.17.6
 scikit-image==0.21.0
 scriptedforms==0.10.1
+seaborn==0.12.2
 ssh-import-id==5.11
 statsmodels==0.14.0
 system-info==2.0.0
