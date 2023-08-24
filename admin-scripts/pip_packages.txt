@@ -47,6 +47,7 @@ jupyterlab-execute-time==2.3.1
 jupyterlab-fasta==3.3.0
 jupyterlab-favorites==3.1.1
 jupyterlab-geojson==3.4.0
+jupyterlab-git==0.39.3
 jupyterlab-image-editor==0.1.0
 jupyterlab-katex==3.4.0
 jupyterlab-kernelspy==3.1.0
@@ -80,7 +81,6 @@ lz4==4.3.2
 mamba==0.11.2
 manimlib==0.2.0
 matplotlib==3.7.2
-
 mapomatic==0.8.0
 mthree==2.5.1
 munkres==1.1.4
