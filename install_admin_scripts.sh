@@ -10,6 +10,7 @@ fi
 echo
 
 if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
+	apt update && apt install zip unzip -y
 	echo -e -n "\nNote that you can only use the scripts normally using root user.\n"
 	# Creating folders in ~/admin-scripts
 	mkdir ~/admin-scripts
@@ -21,6 +22,8 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	cp -TRv admin-scripts  ~/admin-scripts
 	cp -TRv user-interface ~/admin-scripts/user-interface
 	cp -TRv tutorials-notebooks ~/admin-scripts/tutorials-notebooks
+	unzip ~/admin-scripts/tutorials-notebooks/tutorials-notebooks.zip -d ~/admin-scripts/tutorials-notebooks
+	rm ~/admin-scripts/tutorials-notebooks/tutorials-notebooks.zip
 	cp -TRv jupyter-ext-pkg ~/admin-scripts/external-packages
 	chmod +rwx ~/admin-scripts/*.sh
 
