@@ -35,6 +35,9 @@
         text-align: center;
       }
       </style>
+    {% if announcement_login %}
+    
+    {% endif %}
     {% block stylesheet %}
     <link rel="stylesheet" href="{{ static_url("css/style.min.css") }}" type="text/css"/>
     <link rel="stylesheet" href="{{ static_url("css/overridings.css") }}" type="text/css"/>
@@ -111,17 +114,16 @@
       <div class="bg-inverse-01 text-white-0 text-body-short-01 top-0 left-0 w-full flex items-center z-50 h-48">
         <div class="h-full flex items-center pr-16">
           <div class="jp-ibmq--logo">
-            <a href="https://lab.quantum-computing.ibm.com/user/641185bf9fcfb010b29b2585">
-              <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="24" height="24" viewBox="0 0 32 32" aria-hidden="true" class="ml-16 mr-24">
-                <path d="M14 26L15.41 24.59 7.83 17 28 17 28 15 7.83 15 15.41 7.41 14 6 4 16 14 26z"></path>
-              </svg>IBM <span class="ml-4 pr-16 font-600">Quantum Lab</span>
+            <a href="/hub">
+              <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="10" height="24" viewBox="0 0 32 32" aria-hidden="true" class="ml-16 mr-24">
+              </svg> <span class="ml-4 pr-16 font-600">Research Labs</span>
             </a>
           </div>
         </div>
         <div class="theme-g100 flex flex-1 items-center justify-end">
           <div class="relative">
             <div class="jp-ibmq--overflow-menu">
-              <a href="https://github.com/TheFlightSims">
+              <a target="_blank" href="https://github.com/TheFlightSims">
                 <button class="w-48 h-48 flex items-center justify-center focus:outline-none jp-ibmq--overflow-menu-trigger false">
                   <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true">
                     <path d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"></path>
@@ -148,7 +150,7 @@
                         </svg>
                       </div>
                     </div>
-                  </div> Logging out from IBM Quantum Lab
+                  </div> Logging out
                 </div>
               </div>
             </div>
