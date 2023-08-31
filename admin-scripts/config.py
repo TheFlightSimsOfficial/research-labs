@@ -58,8 +58,7 @@ def pre_spawn_hook(spawner):
     except KeyError:
         subprocess.check_call(['useradd', '-ms', '/bin/bash', username])
         subprocess.check_call(['cp', '-TRv', '/etc/jupyter/tutorials-notebooks', '/home/' + username])
-        subprocess.check_call(['chmod', '777', '/home/' + username + '/qiskit-tutorials'])
-        subprocess.check_call(['chmod', '777', '/home' + username + '/r-tutorials'])
+        subprocess.check_call(['chmod', '777', '/home/' + username + '/*'])
 ###
 
 ###############################
