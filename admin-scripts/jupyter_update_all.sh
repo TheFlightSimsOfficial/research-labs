@@ -12,7 +12,7 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	apt update && apt full-upgrade -y
 	pip install -r ~/admin-scripts/pip_packages.txt
 	pip install ~/admin-scripts/external-packages/*.whl
-	npm update npm
+	npm update -g
 	npm install
 	echo "Upgrade completed"
 else
