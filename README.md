@@ -71,6 +71,20 @@ While that, please don't touch on its process. The installation will be complete
 
 > Note: We recommend you connect to a 50Mbps or faster Internet connection, so your installation won't be corrupted by Internet speed.
 
+#### Starting Research Labs
+
+Start the service, using `service` command
+
+```shell
+sudo service researchlabs start 
+```
+
+Check the status
+
+```shell
+sudo service researchlabs status
+```
+
 ## Contributing
 
 To contribute to this project, you can see different ways in [CONTRIBUTING GUIDE](https://github.com/TheFlightSims/research-labs/blob/main/CONTRIBUTING.md).
