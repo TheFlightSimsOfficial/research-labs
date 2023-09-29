@@ -12,9 +12,9 @@ Provide and free-to-use web-based IDE for campus, team, and enterprise, with unl
 
 ### With Docker container
 
-Research Labs on Docker Container helps administrators deploy Research Labs faster, more secure and no additional costs.
+Research Labs on Docker Container helps administrators deploy Research Labs faster, more securely, and at no additional costs.
 
-For immediate use, try pulling, running, and export `8000` to your local port
+For immediate use, try pulling, running, and exporting `8000` to your local port
 
 ```shell
 docker run -p 80:8000 theflightsims/researchlabs:latest
@@ -30,17 +30,17 @@ docker pull theflightsims/researchlabs
 
 Research labs primarily use all-server, all-infrastructure (IaaS) for widespread deployment, more secure, and easier to maintain, operate, and handle disasters.
 
-For better understanding on how Research Labs can handle user data, code handling, and administration, see [CONTRIBUTING GUIDE](https://github.com/TheFlightSims/research-labs/blob/main/CONTRIBUTING.md).
+For a better understanding of how Research Labs can handle user data, code handling, and administration, see [CONTRIBUTING GUIDE](https://github.com/TheFlightSims/research-labs/blob/main/CONTRIBUTING.md).
 
 > Note
 >
-> We recommned you to installing local scripts using `root` user only.
+> We recommend you install local scripts using `root` user only.
 >
 > DO NOT install it only non-admin users. You won't be able to install PyPI packages, MySQL database for storing user data, as well as administration modules.
 
 #### Cloning & Installing scripts
 
-Research Labs uses scriptings for fast deployment, removes most of unnecessary files and folders that are not related directly to the Research Labs server operation (e.g. `.wiki`, `wsl-config`, and markdown files).
+Research Labs uses scriptings for fast deployment and removes most unnecessary files and folders that are not related directly to the Research Labs server operation (e.g. `.wiki`, `wsl-config`, and markdown files).
 
 Cloning from GitHub first
 
@@ -69,15 +69,15 @@ Y # Or press Y manually
 
 While that, please don't touch on its process. The installation will be completed quickly.
 
-> Note: We recommend you to connect to the 50Mbps or faster Internet connection, so your installation won't be corrupted by Internet speed.
+> Note: We recommend you connect to a 50Mbps or faster Internet connection, so your installation won't be corrupted by Internet speed.
 
 ## Contributing
 
-To contribute this project, you can see different ways in [CONTRIBUTING GUIDE](https://github.com/TheFlightSims/research-labs/blob/main/CONTRIBUTING.md).
+To contribute to this project, you can see different ways in [CONTRIBUTING GUIDE](https://github.com/TheFlightSims/research-labs/blob/main/CONTRIBUTING.md).
 
 ## License
 
-This repo uses [GNU GPL-3.0](https://github.com/TheFlightSims/research-labs/blob/main/LICENSE) for easier to distribute, modify and install on any device, with no fee, or additional law barrier.
+This repo uses [GNU GPL-3.0](https://github.com/TheFlightSims/research-labs/blob/main/LICENSE) for easier distribution, modification, and installation on any device, with no fee, or additional law barrier.
 
 ## Feedback
 
