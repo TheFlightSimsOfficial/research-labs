@@ -1,5 +1,7 @@
 import os, math, sys, pwd, subprocess, pymysql
 
+import nativeauthenticator
+
 ##################################################################################################
 # These functions are used to provide advanced settings for JupyterHub
 ###############################
@@ -87,6 +89,25 @@ c.JupyterHub.init_spawners_timeout = 60
 c.JupyterHub.terminals_enabled = False
 
 c.NotebookApp.terminals_enabled = False
+
+#----------------------------
+# Native Authentication behaviour
+
+c.NativeAuthenticator.check_common_password = True
+c.NativeAuthenticator.minimum_password_length = 5
+c.NativeAuthenticator.allowed_failed_logins = 10
+#c.NativeAuthenticator.enable_signup = False
+c.NativeAuthenticator.open_signup = True
+c.NativeAuthenticator.ask_email_on_signup = True
+#c.NativeAuthenticator.recaptcha_key = "your key"
+#c.NativeAuthenticator.recaptcha_secret = "your secret"
+#c.NativeAuthenticator.allow_self_approval_for = '[^@]+@example\.com$'
+#c.NativeAuthenticator.secret_key = "your-arbitrary-key"
+#c.NativeAuthenticator.self_approval_email = ("from", "subject", "email body, including https://example.com{approval_url}")
+#c.NativeAuthenticator.self_approval_server = {'url': 'smtp.gmail.com', 'usr': 'myself', 'pwd': 'mypassword'}
+c.NativeAuthenticator.tos = 'I agree to the <a href="https://github.com/TheFlightSims/research-labs/blob/main/LICENSE" target="_blank">Research Labs licensing terms (by TheFlightSims, and all related parties)</a>, as well as the terms of the Research Labs cloud service provider.'
+c.NativeAuthenticator.allow_2fa = True  
+#----------------------------
 
 c.Spawner.cpu_limit = 1
 c.Spawner.mem_limit = '1024M'
