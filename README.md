@@ -1,61 +1,84 @@
-<p align="center">
-  <img src="https://github.com/TheFlightSims/research-labs/blob/main/banner.png?raw=true" />
-</p>
+# Research Labs
 
-# The Repository
+```markdown
+This repository is a part of this project: Research Labs
 
-This repository enables [Windows Subsystem for Linux](https://aka.ms/wsl) capabilities to provide Labs multi-user mode for schools, businesses, or labs.
+See the main repo here: https://github.com/TheFlightSims/research-labs 
+```
 
-For better understanding, you can see the [wiki page](https://github.com/TheFlightSims/research-labs/wiki).
+Provide and free-to-use web-based IDE for campus, team, and enterprise, with unlimited ability.
 
-# Getting started with Codespace
+## Getting started
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/TheFlightSims/research-labs)
+### With Docker container
 
-# Features
+Research Labs on Docker Container helps administrators deploy Research Labs faster, more secure and no additional costs.
 
-See more at [wiki](https://github.com/TheFlightSims/research-labs/wiki/Getting-started)
+For immediate use, try pulling, running, and export `8000` to your local port
 
-# Requirements & Recommendations
+```shell
+docker run -p 80:8000 theflightsims/researchlabs:latest
+```
 
-| Types | Name | Condition |
-| -- | -- | -- |
-| Requirement | Operating System | Windows Server 2019, Windows Server 2022, Windows 10 1709+
-| **Recommendation** | **Operating System** | **Windows Server 2022 (21H2, 22H2), Windows 10 (21H2, 22H2)**
-| Requirement | WSL version | WSL1, WSL2 requires proxy, or director
-| **Recommendation** | **WSL version** | **WSL1**
-| Requirement | CPU | At least with 4 cores or more
-| **Recommendation** | **CPU** | **8 cores or more**
-| Requirement | Hard Disk Space | At least having a partition with 20Gib of free space
-| **Recommendation** | **Hard disk space** | **At least having a partition with 50Gib of free space**
-| Requirement | RAM | 16Gib of physical + 10Gib of Dynamic = 26Gib total commit
-| **Recommendation** | **RAM** | **64Gib of physical + 32Gib of Dynamic = 96Gib total commit**
+To save for later, try pulling this image only
 
-# Installing & Troubleshooting
+```shell
+docker pull theflightsims/researchlabs
+```
 
-Check out the [wiki](https://github.com/TheFlightSims/research-labs/wiki/Getting-started#installing--troubleshooting) if you want to install from source
+### Without Docker container (Recommended)
 
-Or, install from the final WSL distro (tar.gz) from [Google Drive](https://drive.google.com/file/d/1nRw_D8JOg9GDlm8mjocgzFO4ejyTVLcf/view?usp=sharing), [Mediafire](https://www.mediafire.com/file/ubnk8z0qb6pe11i/researchlabs-beta.7z/file), [Modsfire](https://modsfire.com/G1o4CDn7F5sXH7k), or [Hitfire.net](https://hitf.cc/PSljpUT)
+Research labs primarily use all-server, all-infrastructure (IaaS) for widespread deployment, more secure, and easier to maintain, operate, and handle disasters.
 
- > Note: final WSL distro is the stable version, different from the being-developed version on GitHub. Consider seeing the guides that help you to upgrade to the version you want in Release.
+For better understanding on how Research Labs can handle user data, code handling, and administration, see [CONTRIBUTING GUIDE](https://github.com/TheFlightSims/research-labs/blob/main/CONTRIBUTING.md).
 
-# Contributing & Feedback
+> Note
+>
+> We recommned you to installing local scripts using `root` user only.
+>
+> DO NOT install it only non-admin users. You won't be able to install PyPI packages, MySQL database for storing user data, as well as administration modules.
+
+#### Cloning & Installing scripts
+
+Research Labs uses scriptings for fast deployment, removes most of unnecessary files and folders that are not related directly to the Research Labs server operation (e.g. `.wiki`, `wsl-config`, and markdown files).
+
+Cloning from GitHub first
+
+```shell
+git clone https://github.com/TheFlightSims/research-labs.git
+```
+
+Installing and Removing local git repo
+
+```shell
+cd research-labs
+chmod +x ./install_admin_scripts.sh && ./install_admin_scripts.sh
+Y # Or press Y manually
+cd .. && rm -rf research-labs
+```
+
+#### Installing Research Labs from scratch
+
+Navigating to `admin-scripts` folder and installing Research Labs from here
+
+```shell
+cd ~/admin-scripts
+sudo ./jupyter_setup_server.sh
+Y # Or press Y manually
+```
+
+While that, please don't touch on its process. The installation will be completed quickly.
+
+> Note: We recommend you to connect to the 50Mbps or faster Internet connection, so your installation won't be corrupted by Internet speed.
 
 ## Contributing
-To fully edit this repository, you can use [Visual Studio Code](https://code.visualstudio.com/), [Notepad++](https://notepad-plus-plus.org/downloads/), or any editor that you want
 
-Otherwise, you can do other ways:
- - [Review Wiki Page](https://github.com/TheFlightSims/research-labs/wiki)
- - Submit bugs and feature requests in [GitHub](https://github.com/TheFlightSims/research-labs/issues) or our [Discord server](https://discord.gg/VdbJAHKhuW)
- - [Review source codes]()
- - [Review and commit pull requests](https://github.com/TheFlightSims/research-labs/pulls)
+To contribute this project, you can see different ways in [CONTRIBUTING GUIDE](https://github.com/TheFlightSims/research-labs/blob/main/CONTRIBUTING.md).
+
+## License
+
+This repo uses [GNU GPL-3.0](https://github.com/TheFlightSims/research-labs/blob/main/LICENSE) for easier to distribute, modify and install on any device, with no fee, or additional law barrier.
 
 ## Feedback
-To feedback this repository, go to [**feedback**](issues) or **[join our Discord server](https://discord.gg/VdbJAHKhuW)**
 
-# License 
-
-This repo uses [**GNU GPL 3.0**](https://www.gnu.org/licenses/gpl-3.0.en.html) and [**MIT License**](https://opensource.org/licenses/MIT) for all contributors to have free, no limit to 
-- Use (for both private and commercial uses)
-- Modify (including edit the source files and compile/decompile) 
-- Distribution without permission directly from TheFlightSims, except emergency revokes permission. In that case, this repo will be moved to private and cannot be accessed by the public.
+To feedback this repository, go to [Issues](https://github.com/TheFlightSims/research-labs/blob/main/issues) or [join our Discord server]()
