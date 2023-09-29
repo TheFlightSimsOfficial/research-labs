@@ -85,6 +85,8 @@ Check the status
 sudo service researchlabs status
 ```
 
+By default, Research Labs will start at port `8000` on your local machine.
+
 ## Contributing
 
 To contribute to this project, you can see different ways in [CONTRIBUTING GUIDE](https://github.com/TheFlightSims/research-labs/blob/main/CONTRIBUTING.md).
