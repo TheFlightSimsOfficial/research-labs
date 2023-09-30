@@ -4,6 +4,15 @@ import os, math, sys, pwd, subprocess, pymysql, nativeauthenticator
 # These functions are used to provide advanced settings for JupyterHub
 ###############################
 
+### Tuple to String
+def convertTuple(tup):
+        # initialize an empty string
+    str = ''
+    for item in tup:
+        str = str + item
+    return str
+###
+
 ### Read MySQL password
 def mysql_get_password():
     if os.access("/etc/jupyter/mysql_password.txt", os.R_OK) == True:
