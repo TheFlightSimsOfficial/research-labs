@@ -79,9 +79,6 @@ if [[ "${CONFIRM}" =~ ^[Yy]$ ]]; then
 	pip install ~/admin-scripts/external-packages/ibm_quantum_widgets-4.0.28-py3-none-any.whl  
 	pip install ~/admin-scripts/external-packages/ibmq_jupyter_server_health_ext-0.0.1-py3-none-any.whl 
 	pip install ~/admin-scripts/external-packages/jupyter_qiskit_kernel-1.0.0-py3-none-any.whl 
-
-	# Installing kernel
-	apt install -y r-cran-irdisplay r-cran-irkernel r-cran-repr
 	
 	# Disable legacy features (Notebook, Extension Manager) because of security issues
 	echo -e "Disabling the classic mode"
