@@ -17,7 +17,7 @@ Research Labs on Docker Container helps administrators deploy Research Labs fast
 For immediate use, try pulling, running, and exporting `8000` to your local port
 
 ```shell
-docker run -p 443:443 theflightsims/researchlabs:latest
+docker run -p 80:443 theflightsims/researchlabs:latest
 ```
 
 To save for later, try pulling this image only
@@ -25,6 +25,16 @@ To save for later, try pulling this image only
 ```shell
 docker pull theflightsims/researchlabs:latest
 ```
+
+#### Accessing `administrator` account via Research Labs Web Portal
+
+Once you're done, try to access the web portal. The port is depending on your configuration, by default it is port `80` (with HTTP/No SSL)
+
+Sign up `administrator` account, with your own custom email and password.
+
+![image](https://github.com/TheFlightSims/research-labs/assets/115929530/f40b2720-847d-40c9-b456-e76081fb93aa)
+
+Once you're done, sign in with your username and password.
 
 ### Without Docker container (Recommended)
 
@@ -77,6 +87,16 @@ sudo service researchlabs status
 ```
 
 By default, Research Labs will start at port `443` (with pre-installed SSL) on your local machine.
+
+#### Accessing `administrator` account via Research Labs Web Portal
+
+Once you're done, try to access the web portal. The port is depending on your configuration, by default it is port `443` (with HTTPS/SSL)
+
+Sign up `administrator` account, with your own custom email and password.
+
+![image](https://github.com/TheFlightSims/research-labs/assets/115929530/f40b2720-847d-40c9-b456-e76081fb93aa)
+
+Once you're done, sign in with your username and password.
 
 ## Contributing
 
