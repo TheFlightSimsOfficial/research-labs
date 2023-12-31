@@ -28,6 +28,11 @@ def pre_spawn_hook(spawner):
         subprocess.check_call(['chmod', '777', '/home' + username + '/r-tutorials'])
 ###
 
+### Default URL
+def default_url_fn(handle):
+    return '/hub/home'
+###
+
 ###############################
 ##################################################################################################
 c = get_config()
